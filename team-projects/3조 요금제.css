@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin: 0 auto;
+}
+/* 헤더  */
+header{
+    display: flex;
+    background-color: lightslategray;
+    align-items: center;
+    justify-content: space-between;
+}
+header a{
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+header a:hover{
+    color: lightgreen;
+    text-decoration: underline;
+}
+#search_{
+    width: 30vw; height: 30px;
+}
+
+/* 메인 */
+/* 로고 이미지는 임시로 올렸어요 추후 수정 예정 */
+main{
+    background: url(https://cdn.pixabay.com/photo/2020/01/31/07/53/man-4807395_1280.jpg)  no-repeat ;
+    background-size: cover;
+    background-position: center;
+    height: 1000px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+main h1,h2,div{
+    margin: 20px;
+}
+main h1{
+    font-size: 4vw;
+}
+main h2{
+    font-size: 2.5vw;
+}
+button{
+    width: 200px; height: 50px;
+    background-color: lightblue;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 15px;
+}
+main a{
+    
+    color: black;
+    text-decoration: none;
+}
+main button:hover{
+    background-color: beige;
+    transform: scale(1.1);
+    color: darkred;
+    font-weight: 800;
+    cursor:pointer
+}
+
+/* 푸터 */
+footer{
+    width: 1000px;
+    margin: 0 auto;
+}
+footer h2{
+    
+    margin-left: 150px;
+}
+ul{
+    list-style: none;
+    
+}
+
+footer p{
+    color: gray; display:none;
+}
+
+.q1:hover .a1{
+    display: block;
+}
+.q2:hover .a2{
+    display: block;
+}
+.q3:hover .a3{
+    display: block;
+}
+.q4:hover .a4{
+    display: block;
+}
+
+footer a{
+    text-decoration: none;
+    font-weight: bold;
+}
+footer a:visited{
+    color: blue;
+}
+
+
+
+/* 할거 없으면 메인에 요금제 섹션 만들기 */
+/* 푸터에 구현하고자한 기능은 자바스크립트가 필요해서 임시로
+hover 기능을 써서 구현 */
