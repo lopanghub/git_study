@@ -27,7 +27,7 @@ header a:hover{
     width: 30vw; height: 30px;
 }
 
-/* 메인 */
+/* 요금제 메인 */
 /* 로고 이미지는 임시로 올렸어요 추후 수정 예정 */
 main{
     background: url(https://cdn.pixabay.com/photo/2020/01/31/07/53/man-4807395_1280.jpg)  no-repeat ;
@@ -68,6 +68,15 @@ main button:hover{
     color: darkred;
     font-weight: 800;
     cursor:pointer
+}
+/* 요금제 섹션 */
+section{
+    width: 1000px;
+    margin: 0 auto;
+}
+section h1{
+    font-size: 2.5vw;
+    text-align: center;
 }
 
 /* 푸터 */
