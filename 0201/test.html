@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품 목록</title>
+    <style>
+        li{
+            padding : 5px; margin: 5px;
+        }
+        .order::before{
+            content: "주문 폭주";
+            background-color: deeppink;
+            color: blue;
+            margin: 0 5px;
+        }
+        .new:after{
+            content: "new";
+            background-color: red;
+            color: beige;
+            margin: 0 5px;
+        }
+        
+        .sold:after{
+            content: "품절";
+            background-color: green;
+            color: beige;
+            margin: 0 5px;
+        }
+        
+        .order::before:hover{
+            transform: (1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>제품 목록</h1>
+    <ul>
+        <li class="order">제품 A</li>
+        <li>제품 B</li>
+        <li>제품 C</li>
+        <li class="new">제품 D </li>
+        <li class="order">제품 E </li>
+        <li>제품 F </li>
+        <li class="sold">제품 G </li>
+        <li class="sold">제품 H </li>
+    </ul>
+</body>
+</html>
