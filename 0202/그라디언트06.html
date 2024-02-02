@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradient01</title>
+    <style>
+        div{
+            width: 500px; height: 300px;
+            border: 1px solid black;
+        }
+        .grad1{
+           background: green; 
+           background: repeating-linear-gradient(yellow, green 20px);
+        }
+        .grad2{
+            background: blue;
+            background: repeating-linear-gradient(yellow, yellow 20px, green 20px, green 40px);
+            /* 시작과 끝색상을 명확하게 구분  */
+           
+        }
+        .grad3{
+            background: blue;
+            background: repeating-radial-gradient(circle, yellow, red 10%);
+        }
+        .grad4{
+            background: blue;
+            background: repeating-radial-gradient(circle, white, white 10%, gray 10%, gray 20%);
+        }
+    </style>
+</head>
+<body>
+    <div class="grad1"></div>
+    <div class="grad2"></div>
+    <div class="grad3"></div>
+    <div class="grad4"></div>
+</body>
+</html>

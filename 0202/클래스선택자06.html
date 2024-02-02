@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인접 형제 선택자</title>
+    <style>
+        /* 선택한 클래스 다음 형제 요소중 p요소들을 선택 */
+        /* 선택 클래스 형제인 p요소 모두 선택 */
+        .title ~p{
+            background-color: blue;
+        }
+        i{
+            width:100px;
+        }
+    </style>
+    
+    <script src="https://kit.fontawesome.com/4ec79785b5.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <h1 class="title">선택자 Selector 스타일 지정</h1>
+    <p>웹 디자이너</p>
+    <p>웹 퍼블리셔</p>
+    <p>프론트 앤드</p>
+    <div>
+        <h2>선택자 스타일 지정</h2>
+        <p>웹 디자이너</p>
+        <p>웹 퍼블리셔</p>
+        <p>프론트 앤드</p>
+        <section>
+            <p>웹 기획</p>
+            <p>웹 스토리보드</p>
+            <p>웹 스토리텔링</p>
+        </section>
+        <p>웹 디자이너</p>
+        <p>웹 퍼블리셔</p>
+        <p>프론트 앤드</p>
+    </div>
+    <p>웹 디자이너</p>
+    <p>웹 퍼블리셔</p>
+    <p>프론트 앤드</p>
+    <i class="fa-brands fa-free-code-camp" ></i>
+
+
+</body>
+</html>

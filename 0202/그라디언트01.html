@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradient01</title>
+    <style>
+        div{
+            width: 500px; height: 350px;
+            border: 1px solid black;
+            border-radius: 20px;
+        }
+        .grad{
+            /* 그라데이션을 지원하지 않는 브라우저 전용 */
+            background-color: blue;
+            /* 오른쪽 아래 방향으로, 파랑에서 흰색으로 (표준구문)*/
+            background: linear-gradient(to right bottom, blue, white);
+
+            /* 브라우저 버전에 따른 입력 방법 -접두사 */
+            /* 표준화된 구문 위에 그라데이션 지원하지 않는 브라우저 */
+            /* -webkit- 사파리 5.1 ~ 6.0 */
+            /* -moz 파이어 폭스 3.6 ~15 */
+            /* -0- 오페라 11.1 ~12.0 */
+            background: -webkit-linear-gradient(left top, blue, white);
+            background: -moz-linear-gradient(left top, blue, white);
+            background: -o-linear-gradient(left top, blue, white);
+        }
+    </style>
+</head>
+<body>
+    <div class="grad">
+
+    </div>
+</body>
+</html>
