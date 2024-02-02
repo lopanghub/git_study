@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a타겟속성</title>
+    <style>
+        /* 속성 중 target이 있는 요소 선택(지정한 속성) */
+        [target]{
+            background-color: chocolate;
+            color: aliceblue;
+        }
+        /* 타겟 속성 중에서 _blank인 요소(값에 일치) */
+        [target=_blank]{
+            background-color: red;
+        }
+        /* title 값이 포함된(~) 모든 요소 */
+        [title~="웹(Web)"]{
+            background-color: black;
+            color:aliceblue
+        }
+        /* lang 속성 값이 en문자열이 포함된 모든요소(하이픈포함 단어별) */
+        [lang|=eng]{
+            background-color: yellowgreen;
+            color
+        }
+
+        /* href값이 http로 시작하는(^) 요소 찾기 */
+        a[href^="http"]{
+            background-color: pink;
+        }
+
+        /* href값이 com으로 끝($)나는 요소 선택 */
+        a[href$="com"]{
+            background-color: green;
+        }
+        /* href값이 daum 일부 포함(*)된 요소 선택 */
+        a[href*="da"]{
+            background-color: aqua;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>프론테엔드는 많은 앞 단에 이루어지는 <a href="#">웹 사이트</a>를 처리한다.</p>
+    
+        <p><a href="#" target="_self" title="웹 기획">웹 기획</a></p>
+        <p><a href="#" target="_blank" title="웹 스토리보드">웹 스토리보드</a></p>
+        <p><a href="#" title="웹 스토리텔링">웹 스토리텔링</a></p>
+    
+        <div>
+            <h1 class="section" title="선택자 스타일 지정">선택자 스타일 지정</h1>
+            <p class="text-web" title="웹 디자이너">웹 디자이너</p>
+        </div>
+
+        <p><a href="#" target="_self" title="웹 기획">웹 기획</a></p>
+        <p><a href="#" target="_blank" title="웹 스토리보드">웹 스토리보드</a></p>
+        <p><a href="#" title="웹 스토리텔링" lang="eng">웹 스토리텔링</a></p>
+   
+
+        <p><a href="http://www.naver.com" target="_self" title="웹(Web) 기획">웹(Web) 기획</a></p>
+        <p><a href="http://www.daum.net" target="_blank" title="웹(Web) 스토리보드">웹(Web) 스토리보드</a></p>
+        <p><a href="http://www.google.com" title="웹(Web) 스토리텔링">웹(Web) 스토리텔링</a></p>
+   
+    </div>
+</body>
+</html>

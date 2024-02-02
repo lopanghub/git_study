@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드롭다운</title>
+    <style>
+        .container{
+            display: flex;
+        }
+        .dropbtn{
+            background-color: lightblue;
+            width: 200px;
+            font-weight: bold;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        ul{
+            list-style: none;
+            text-align: center;
+            padding-left: 0;
+        }
+        .dropdown-content{
+            display: none;
+        }
+        .container:hover .dropdown-content{
+            display: block;
+        }
+        .dropdown-content li a{
+            text-decoration: none;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dropdown">
+            <ul class="dropbtn">드롭다운
+                <div class="dropdown-content">
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                </div>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <ul class="dropbtn">드롭다운
+                <div class="dropdown-content">
+                    <li><a href="#">서브메뉴1</a></li>
+                    <li><a href="#">서브메뉴2</a></li>
+                    <li><a href="#">서브메뉴3</a></li>
+                </div>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <ul class="dropbtn">드롭다운
+                <div class="dropdown-content">
+                    <li><a href="#">link1</a></li>
+                    <li><a href="#">link2</a></li>
+                    <li><a href="#">link3</a></li>
+                </div>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
