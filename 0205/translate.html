@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>translate</title>
+    <style>
+        .orgin{
+            border: 1px solid;
+            width: 300px;
+        }
+        .movex:hover{
+            /* 마우스 오버시 x축(오른쪽)으로 50px이동 */
+            transform: translateX(50px);
+        }
+        .movey:hover{
+            /* 마우스 오버시 y 축으로(위,아래) 50px이동 */
+            transform: translatey(-50px);
+        }
+        .movexy:hover{
+            /* 마우스 오버시 사선으로 이동 */
+            transform: translate(50px,20px);
+        }
+    </style>
+</head>
+<body>
+    <h2>변형 transform 트랜스폼</h2>
+    <p>특정 요소의 크기나 형태가 변하는 것을 변형 또는 트랜스폼이라고 한다.
+        사용자의 동작에 반응해 텍스트나 이미지등을 움직이게 할 수 있다.
+        2차원(x,y)/3차원(x,y,z) : 원근감의 표현 z축 앞뒤로 이동하는데 가까워지고 멀어진다.
+    </p>    
+    <div class="orgin">
+        <div class="movex"><img src="../images/다운로드.jpg" alt=""></div>
+    </div>
+    <div class="orgin">
+        <div class="movey"><img src="../images/다운로드.jpg" alt=""></div>
+    </div>
+    <div class="orgin">
+        <div class="movexy"><img src="../images/다운로드.jpg" alt=""></div>
+    </div>
+</body>
+</html>

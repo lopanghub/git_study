@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rotate3d</title>
+    <style>
+        img{
+            width: 200px;
+        }
+        .origin{
+            perspective: 200px; /*원근감: 3차원 적용*/
+            border: 1px solid;
+            width: 250px;
+            height: 200px;
+            margin: 20px 0;
+        }
+        .rotatex{transform: rotatex(30deg);} /* x 축 기준으로 시계방향으로 30도 회전*/
+        .rotatey{transform: rotatey(45deg);} /* y 축 기준으로 시계방향으로 45도 회전*/
+        .rotatez{transform: rotatez(45deg);} /* z 축 기준으로 시계방향으로 45도 회전*/
+        .rotatexyz{transform: rotate3d(2.5, 1.2, -1.5, 45deg);}
+        /* x축 y축 z축 벡터로 45도 회전 */
+    </style>
+</head>
+<body>
+    <h2>이미지 3차원 회전하기</h2>
+    <div class="origin">
+        <div class="rotatex"><img src="../images/coffee-2242213_1280.jpg" alt=""></div>
+    </div>
+    <div class="origin">
+        <div class="rotatey"><img src="../images/coffee-2242213_1280.jpg" alt=""></div>
+    </div>
+    <div class="origin">
+        <div class="rotatez"><img src="../images/coffee-2242213_1280.jpg" alt=""></div>
+    </div>
+    <div class="origin">
+        <div class="rotatexyz"><img src="../images/coffee-2242213_1280.jpg" alt=""></div>
+    </div>
+</body>
+</html>

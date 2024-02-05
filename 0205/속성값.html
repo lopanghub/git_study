@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lang 속성값</title>
+    <style>
+        div p{
+            font-size: 20px;
+            text-align: center;
+        }
+        div p:lang(ko){
+            color: lightblue;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p lang="en">미국</p>
+        <p lang="ko">한국</p>
+        <p lang="uk">영국</p>
+        <p lang="jp">일본</p>
+        <p lang="fr">프랑스</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3차원 회전예제</title>
+    <style>
+        section{
+            display: flex;
+        }
+        .origin{
+            perspective: 200px; /*원근감*/
+            border: 1px solid;
+        }
+        .origin div{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            transition: all 3s;
+        }
+        .rotatex:hover{
+            transform: rotateX(55deg);
+        }
+        .rotatey:hover{
+            transform: rotatey(55deg);
+        }
+        .rotatez:hover{
+            transform: rotatez(55deg);
+        }
+        .rotatexyz:hover{
+            transform: rotate3d(2.5,1.2,-1.5,55deg);
+        }
+       
+    </style>
+</head>
+<body>
+    <section>
+    <div class="origin">
+        <div class="rotatex"></div>
+    </div>
+    <div class="origin">
+        <div class="rotatey"></div>
+    </div>
+    <div class="origin">
+        <div class="rotatez"></div>
+    </div>
+    <div class="origin">
+        <div class="rotatexyz"></div>
+    </div>
+    </section>  
+</body>
+</html>

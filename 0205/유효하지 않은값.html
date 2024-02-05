@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유효하지 않은 값</title>
+    <style>
+        form input[type="email"]{
+            background-color: beige;
+            color:gray;
+            font-size: 18px;
+            text-align: center;
+            width: 500px;
+            height: 40px;
+            border: 1px solid brown;
+            margin-bottom: 50px;
+        }
+        form input:invalid{
+            color: red;
+            background-color: pink;
+            border: 1px solid red;
+        }
+        #mail{
+            color: purple;
+        }
+        input:focus{
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="mail">이메일</label>
+        <input type="email" name="mail" id="mail"><br>
+        <label for="mail2">이메일2</label>
+        <input type="email" name="mail2" id="mail2">
+    </form>
+</body>
+</html>

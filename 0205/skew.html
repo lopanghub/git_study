@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skew</title>
+    <style>
+        img{
+            width: 200px;
+        }
+        .origin{
+            
+            border: 1px solid;
+            width: 250px;
+            height: 200px;
+            margin: 20px 0;
+        }
+        .skewx:hover{
+            /* x축으로 30도 비틀기 */
+            transform: skewX(30deg);
+        }
+        .skewy:hover{
+            /* y축으로 15도 비틀기 */
+            transform: skewy(30deg);
+        }
+        .skewxy:hover{
+            /* xy축으로 비틀기 */
+            transform: skew(-30deg, -15deg);
+        }
+    </style>
+</head>
+<body>
+    <h2>이미지 비틀기 skew 효과</h2>
+    <div class="origin">
+        <div class="skewx"><img src="../images/coffee-2242213_1280.jpg" alt=""></div>
+    </div>
+    <div class="origin">
+        <div class="skewy"><img src="../images/coffee-2242213_1280.jpg" alt=""></div>
+    </div>
+    <div class="origin">
+        <div class="skewxy"><img src="../images/coffee-2242213_1280.jpg" alt=""></div>
+    </div>
+</body>
+</html>
