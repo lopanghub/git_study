@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* 헤더 */
+header{
+    background-color: lightgreen;
+    color: aliceblue;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    display: flex;
+    height: 100px;
+    font-size: 20px;
+}
+header ul{
+    list-style: none;
+    margin: 30px 80px;
+}
+header li a{
+    color: black;
+    text-decoration: none;
+    display: none;
+}
+.droplink{
+    text-align: center;
+    background-color: aqua;
+}
+header:hover{height: auto;}
+header:hover li a{
+    display: block;
+}
+
+/* 메인 */
+main{
+    width: 1000px;
+    padding-left: 20px;
+    margin: 50px auto;
+}
+.container{
+    display: flex;
+    text-align: center;
+}
+.travel{
+    margin: 10px;
+    height: 400px;
+    
+}
+
+img{
+    width:300px;
+    height: 200px;
+}
+.container .travel:hover{
+    border: 1px solid red;   
+}
+main .travel:hover > .trT{
+    transform: translateY(-80px);
+    transform-origin: 0 100%
+}
+/* 푸터 */
+footer{
+    background-color: darkgreen;
+    border-top: 1px solid ;
+    border-bottom: 1px solid;
+    height: 100px;
+}

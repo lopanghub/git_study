@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ani02</title>
+    <style>
+        *{  
+            margin: 0;
+            padding: 0;
+        }
+        section{
+            margin: 0;
+            background: url(../images/coffee-2242213_1280.jpg) no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 900px;
+            
+        }
+        .firPart span{
+            color: aliceblue;
+            font-size: 50px;
+            position: absolute;
+            top : 52%;
+            right: 20%;
+            animation: moveIn 3s ease-in;
+        }
+        .firPart p{
+            color: aliceblue;
+            font-size: 30px;
+            position: absolute;
+            top : 60%;
+            left: 60%;
+            animation: moveIn2 2s ease-out;
+        }
+        pre{
+            color: aliceblue;
+            font-size: 25px;
+            position: absolute;
+            bottom : 20%;
+            right: 25%;
+            animation: moveIn3 2s ease-in-out;
+        }
+
+        
+        @keyframes moveIn {
+            from{
+                right : -10%;
+            }
+            to{
+                right : 20%; 
+            }
+        }
+        @keyframes moveIn2 {
+            from{
+                left : -10%;
+            }
+            to{
+                left : 60%; 
+            }
+        }
+        @keyframes moveIn3 {
+            from{
+                bottom : -10%;
+            }
+            to{
+                bottom : 20%; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="firPart">
+            <span>pour un logiciel CRM,</span>
+            <p>
+                simple, complet <br>
+                et intuitif
+            </p>
+        </div>
+
+        <pre class="secPart">
+            crm 소프트 웨어를 선택하고,
+            간단하고 완전하며
+            직관적인
+        </pre>
+    </section>
+</body>
+</html>

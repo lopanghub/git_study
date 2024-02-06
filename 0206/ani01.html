@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 기본</title>
+    <style>
+        .box{
+            width: 200px; 
+            height: 200px;
+            background-color: coral;
+            border-radius: 50%;
+            font-size: 30px;
+            text-align: center;
+            line-height: 200px;
+            margin: 50px auto;
+            animation: aniName 3s alternate infinite ease-in-out;
+            /* 애니메이션 이름, 시간 
+            한 줄로 속성값 입력이 권장사항
+            alternate : 갔다가왔다가(돌아오게)
+            infinite : 무한반복 */
+        }
+        @keyframes aniName {
+            from{
+                transform: translate(0,0);
+            }
+            to{
+                transform: translate(400px, 300px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="box">animation</div>
+    </div>
+</body>
+</html>
