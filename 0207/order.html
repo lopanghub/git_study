@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order</title>
+    <style>
+        section{
+            display: flex;
+            height: 100vh;
+        }
+        .item{
+            padding: 20px; font-size: 30px;
+        }
+        .item:nth-child(1){background-color: chocolate;
+            /* order:1; */
+        }
+        .item:nth-child(2){background-color: slategray;
+            /* order: 2; */
+        }
+        .item:nth-child(3){background-color: lightcoral;
+            order: -1;
+            /* 기본값이 0 숫자가 적을수록 앞으로 */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>order : 아이템 순서 제어</h1>
+    <section>
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+    </section>
+</body>
+</html>

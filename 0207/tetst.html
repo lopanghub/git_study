@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid_test</title>
+    <style>
+        .wrapper{
+            width: 1000px;
+            border: 1px solid blue;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 100px);
+            grid-gap: 10px;
+            grid-template-areas: 
+                "box1 box1 box2"
+                "box3 box4 box2"
+                "box5 box4 box6"
+                "box5 box7 box7"
+            ;
+            padding: 5px;
+            height: 700px;
+        }
+        .box{
+            border: 1px solid red;
+        }
+        .box1{
+            background: url(../images/avo.png);
+            grid-area: box1;
+            background-size: contain;
+        }
+        .box2{
+            background: url(../images/insta.png);
+            grid-area: box2;
+            background-size: cover;
+        }
+        .box3{
+            background: url(../images/avo.png);
+            grid-area: box3;
+        }
+        .box4{
+            background: url(../images/avo.png);
+            grid-area: box4;
+        }
+        .box5{
+            background: url(../images/avo.png);
+            grid-area: box5;
+        }
+        .box6{
+            background: url(../images/avo.png);
+            grid-area: box6;
+        }
+        .box7{
+            background: url(../images/avo.png);
+            grid-area: box7;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+        <div class="box box7"></div>
+    </div>
+    <input type="button" value="click"
+    onclick="alert('hello?')">
+    <p onclick="alert('감사합니다')">눌러보세요</p>
+    <input type="button" value="버튼" onclick="numbering(5)">
+      <br><br> 
+    <input type="button" value="클릭" onclick="red()">
+    <script>
+        function numbering(n) {
+            for(let i = 0; i<n; i++){
+                console.log(i)
+            }
+        }
+
+        function red(){
+            let button = document.querySelector("input")
+            button.style.backgroundColor = "red";
+        }
+    </script>
+</body>
+</html>

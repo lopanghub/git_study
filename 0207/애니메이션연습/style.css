@@ -1,0 +1,92 @@
+*{margin: 0; padding: 0;}
+body{
+    width: 100%; height: 100vh;
+    background-color: lightblue;
+    animation: sky linear 20s infinite;
+    overflow: hidden;
+}
+section{
+    width: 1000px; height: 400px; position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+h1{
+    width: 1000px; position: absolute;
+    top :50%; left:50%;
+    font: 92px/1 "poiret one";
+    color: #fff;
+    text-align: center;
+    transform: translate(-50%, 180%);
+}
+section .sky{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.sun{
+    position: absolute;
+    top : -150px;
+    left : 50%;
+    margin-left: -100px;
+    transform-origin: center 500px;
+    animation: sun linear 20s infinite;
+}
+section .sky .cloud1{
+    position: absolute;
+    top: 20px;
+    left: 0%;
+    animation: flow linear 10s infinite;
+}
+section .town .day{
+    position: absolute;
+    bottom: 0;
+    left: 150px;
+    animation: day linear 10s infinite;
+}
+section .town .night{
+    position: absolute;
+    bottom: 0;
+    left: 150px;
+}
+.rotation{
+    position: absolute;
+    top: 210px;
+    left: 520px;
+    animation: rotation linear 15s infinite;
+}
+
+
+@keyframes sky {
+    0%{background-color: #b580e4;}
+    25%{background-color: lightblue;}
+    50%{background-color: #f1a8c4;}
+    75%{background-color: #5d649b;}
+    100%{background-color: #b580e4;}
+}
+@keyframes sun {
+    0%{opacity: 0; transform: rotate(-90deg);}
+    25%{opacity: 1; transform: rotate(-30deg);}
+    50%{opacity: 1; transform: rotate(30deg);}
+    75%{opacity: 0; transform: rotate(90deg);}
+    100%{opacity: 0; transform: rotate(-90deg);}
+}
+
+@keyframes rotation { /*대관람차*/
+    0%{transform: rotate(0);}
+    100%{transform: rotate(360deg);}
+}
+
+@keyframes day { /*밤 요소 숨기는*/
+    0%{opacity: 0;}
+    25%{opacity: 1;}
+    50%{opacity: 1;}
+    75%{opacity: 0;}
+    100%{opacity: 0;}
+}
+
+@keyframes flow { /*구름*/
+    0%{left: 0%; opacity: 0;}
+    10%{opacity: 1;}
+    80%{opacity: 1;}
+    100%{left: 90%; opacity: 0;}
+}
