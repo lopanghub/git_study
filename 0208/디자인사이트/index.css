@@ -1,0 +1,80 @@
+*{margin: 0; padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none; text-decoration: none;}
+
+.container{
+    width: 1400px;
+    margin: 0 auto;
+}
+/* 헤더 부분 */
+header{
+    display: flex;
+    justify-content: space-around;
+    background-color: beige;
+    padding: 20px 0 10px;
+}
+
+header ul{
+    display: flex;
+}
+header ul li{
+    margin: 0 15px;
+}
+header a{
+    color: gray;
+    font-weight: bold;
+}
+
+.logo{
+    color: gray; font-weight: 800;
+    font-size: large;
+}
+
+/* 메인 시작 */
+.newCol{
+    height: 300px;
+    width: 1400px;
+    background: url("https://cdn.pixabay.com/photo/2015/09/06/01/09/wheat-926876_1280.jpg")
+    no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    object-fit: fill;
+    font-size: 25px;
+    font-weight: 800;
+    text-align: center;
+    padding-top: 20%;
+}
+.newCol a{
+    font-size : 18px;
+    color: orange;
+}
+
+/* 첫 번째 섹션  부분 */
+.firSection{
+    text-align: center;
+    margin: 150px;
+}
+
+/* 밑줄 bar 부분 */
+.bar{
+    content: "";
+    border-top:1px dotted gray;
+    width: 90%;
+    margin-top: 130px;
+    margin-left: 5%;
+}
+
+
+/* 푸터 부분 */
+footer{
+    display: flex;
+}
+
+footer a{
+    color: gray; font-size: 15px;
+}
+footer div{
+    width: 100px;
+    /* border: 1px solid salmon; */
+    padding-left: 20px;
+}
