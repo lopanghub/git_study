@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기초 변수</title>
+</head>
+
+<body>
+
+    <SCript>
+        // 변수 문자형 String
+        let a = "javaScript";
+        let num = "100";
+        let tag = "<h1> String </h1>" //태그로 인식
+        console.log(a);
+        console.log(num);
+        console.log(tag);
+        // document.write(tag);
+        // document.write(a);
+        // document.write(num);
+
+        // 변수 숫자형 number
+        let s = 100;
+        let t = Number("500") //형변환
+        console.log(s);
+        console.log(t);
+
+        //변수 논리형 boolean
+        let y = true;
+        var tt = 10 > 100;
+        console.log(y);
+        console.log(tt);
+        var k = Boolean("hello"); //빈 문자외 모두 true
+        console.log(y);
+        console.log(tt);
+        console.log(k);
+        var m = Boolean(0); //0은 false
+        var m = Boolean(15); //숫자는 true
+        var k = Boolean("홍길동") //문자는 true
+
+        // null과 undefined 데이터
+        // undefined 정의(할당)되지 않았음. (데이터 상태)
+        // null 데이터 값이 유효하지 않은 상태 (비어있다)
+        // 0은 null이 아님
+
+        var sol; //변수만 선언된 상태
+        console.log(sol);
+        var tol = "hello"
+        console.log(tol);
+
+        // type of 어떤 자료형인지 알고 싶을 때
+        var nu = 100;
+        let str = "자바스크립트";
+        console.log(typeof nu);
+        console.log(typeof str);
+        document.write(nu + "의 자료형은" + typeof nu, "입니다.<br>")
+        document.write(str + "의 자료형은" + typeof str, "입니다.<br>")
+
+
+        //연산자
+        var num1 = 15;
+        var num2 = 2;
+        var result;
+        result = num1 + num2
+        document.write(result, "<br>");
+        result = num1 - num2
+        document.write(result, "<br>");
+        result = num1 * num2
+        document.write(result, "<br>");
+        result = num1 / num2
+        document.write(result, "<br>");
+        result = num1 % num2; //1 나머지 계산
+        document.write(result, "<br>");
+
+        //문자 결합 연산자
+        var t1 = "동해물과";
+        var t2 = "백두산이";
+        var t3 = 1234;
+        var t4 = "마르고 닳도록";
+        var result;
+        result = t1 + t2 + t3 + t4;
+        document.write(result + "<br>")
+
+        //증감연산자
+        let num6 = 10;
+        let num7 = 20;
+        let result123;
+
+        num6--; // 1만큼 차감
+        document.write(num6, "<br>")
+
+        num6++; // 1만큼 증가
+        document.write(num6, "<br>")
+
+        result123 = num7++; //결과값 출력 먼저하고 합산
+        document.write(result123, "<br>")
+
+        result = ++num7; //증감을 먼저하고 결과값 출력
+        document.write(result123, "<br>")
+
+        //대입 연산자 : 연산된 데이터를 변수에 저장
+        //복합 연산자 : 산술 + 대입
+
+        var num1 = 10;
+        var num2 = 3;
+        num1 += num2; // num1=  num1 + num2;와 같다
+        document.write(num1, "<br>") //13
+        num1 -= num2;
+        document.write(num1, "<br>")
+        num1 *= num2;
+        document.write(num1, "<br>")
+        num1 /= num2;
+        document.write(num1, "<br>")
+        num1 %= num2;
+        document.write(num1, "<br>")
+
+        // 복합연산자 표 만들어 보기
+        var strr = "<table border ='1'>"
+        strr += "<tr>";
+        strr += "<td>1</td>";
+        strr += "<td>2</td>";
+        strr += "<td>3</td>";
+        document.write(strr);
+
+        // 비교연산자
+        var ko = 10, mo = "10";
+        ko == 10; //true;
+        ko === 10; //true; 자료형까지 일치하는지 확인
+        mo === 10; //false; 자료형이 다름 [숫자형/문자형]
+
+        var a1 = 10;
+        var b1 = 20;
+        var c1 = 10;
+        var f1 = "20";
+        var resultB;
+
+        resultB = a1 > b1;
+        console.log(resultB); //false
+        resultB = a1 < b1;
+        console.log(resultB); //true
+        resultB = a1 <= b1;
+        console.log(resultB); //true
+        resultB = b1 == f1;   //자료형과 상관없이 비교
+        console.log(resultB); //true
+        resultB = b1 === f1;  //자료형까지 비교
+        console.log(resultB);
+        resultB = a1 != b1;   //같지 않다 !=
+        console.log(resultB);
+
+        //논리 연산자
+        var a2 = 10;
+        var b2 = 20;
+        var m2 = 30;
+        var n2 = 40;
+        var resultC;
+        resultC = a2 > b2 || b2 > m2 || m2 > n2; // or 이거나
+        console.log(resultC)
+
+    </SCript>
+    <!-- body 부분 끝나기 전에 스크립트를 쓴다  -->
+    <!-- body 부분이 먼저 실행된 후에 자바스크립트 실행한다 -->
+</body>
+
+</html>

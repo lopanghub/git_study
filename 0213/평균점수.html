@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평균점수</title>
+    <style>
+        h2 {
+            font-size: 2em;
+            color: aliceblue;
+            background: royalblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="summary">당신의 합계 점수는 몇 점입니다.</h2>
+    <h2 id="average">당신의 평균 점수는 몇 점입니다.</h2>
+    <script>
+        // 3과목의 점수를 입력 받아 화면에 출력하는
+        let kor = Number(prompt("국어점수는?"))
+        let eng = Number(prompt("영어점수는?"))
+        let math = Number(prompt("수학점수는?"))
+
+        // 3과목의 합산
+        let sum = kor + eng + math
+        document.getElementById("summary").innerHTML =
+            `당신의 합계 점수는 ${sum}점입니다.`;
+        // 3과목의 평균 점수
+        let avg = sum / 3;
+        document.getElementById("average").innerHTML =
+            `당신의 평균 점수는 ${avg}점입니다.`
+        //화면에 출력
+    </script>
+</body>
+
+</html>

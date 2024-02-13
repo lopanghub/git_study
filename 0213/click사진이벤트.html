@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 클릭 이벤트</title>
+    <script src="https://kit.fontawesome.com/4ec79785b5.js" crossorigin="anonymous"></script>
+    <style>
+        #item {
+            font-size: 2em;
+        }
+
+        img {
+            float: right;
+            width: 500px;
+        }
+
+        section {
+            display: flex;
+        }
+
+        button {
+            background: white;
+            border: none;
+        }
+
+        i {
+            font-size: 2.5em;
+        }
+
+        #open {
+            color: gray;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="item">
+        <img src="../images/github logo.png">
+
+        <!-- 사진에 대한 내용 -->
+
+        <section class="caption">
+            <button id="open" onclick="showDetail()"><i class="fa-solid fa-arrow-right"></i> </button>
+            <button id="close" onclick="hideDetail()"><i class="fa-solid fa-arrow-down"></i></button>
+            <h4>Github의 역사</h4>
+        </section>
+        <hr>
+        <div id="desc" class="detail">
+            <p>창업자 톰과 크리스는 Ruby on Rails 모임을 통해 친구가 된다. 둘 다 직장인이었기 때문에 매주 주말에만 만나며 사이드 프로젝트로 서비스를 시작했으나 규모가 커지기 시작하여 또
+                다른 공동창업자 PJ를 불러들여 전업으로 사업을 시작한다. 창업자 셋 다 개발자 출신이다.
+
+                2008년 퍼블릭 베타 버전을 출시한 이래로 기업들을 위한 비공개 저장소 기능을 공개하며 사용자가 급증하여 스타트업 인덱스라고도 불리는 Y Combinator의 투자를 받는다. 창업
+                2년차까지는 비용 절감을 위해 사무실 없이 원격으로 근무했으며 호스팅 비용을 아끼기 위해 '엔진야드'라는 업체에게 무료 광고를 게재해주는 대가로 무료 호스팅을 지원 받았다고 한다.
+
+                2011년 호스팅 프로젝트 200만 개를 넘겼으며 애드웨어, 해킹, 바이러스 등의 문제로 많은 개발자들의 신뢰를 잃은 SourceForge, 구글코드 등을 제치며 대부분의 프로젝트가
+                GitHub 쪽으로 이주하게 됐다.
+
+                2012년 7월 시리즈 A 라운드에서 앤드리슨 호로위츠로부터 기업가치 7억 5,000만 달러를 평가받으며 1억 달러를 투자받았다.
+
+                본래 중간 관리자 없이 직원들이 알아서 하고 싶은 프로젝트를 진행하는 시스템이었으나, 2014년에 퇴사한 한 여성 직원이 사내 성차별이 만연했으며 창업자 톰과 그의 부인의 개입이
+                지나치다며 폭로한 사건이 대서특필되면서 톰은 사임했고 중간 관리자 직책도 추가시키며 시스템을 개편했다.
+
+                2015년 7월 세쿼이아캐피탈이 리드하는 시리즈 B 라운드에서 기업가치 20억 달러를 평가받으며 2억 5,000만 달러 투자를 유치했다. 이후 미국 외 해외 진출을 위한 첫 오피스로
+                일본을 선택했다.</p>
+
+        </div>
+    </div>
+
+    <script>
+        const caption = document.querySelector('.caption')
+        const btnOpen = document.getElementById('open')
+        const btnClose = document.getElementById('close')
+        const desc = document.getElementById('desc')
+
+
+        // 상세 설명 부분을 화면에 표시
+        function showDetail() {
+            desc.style.display = "block";
+            btnClose.style.display = 'block';
+            btnOpen.style.display = 'none'
+            caption.style.color = 'black'
+        }
+        // 상세 설명 부분을 화면에서 감춤
+        function hideDetail() {
+            desc.style.display = "none";
+            btnClose.style.display = 'none';
+            btnOpen.style.display = "block"
+            caption.style.color = 'gray'
+        }
+    </script>
+</body>
+
+</html>

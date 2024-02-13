@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clickevent</title>
+    <style>
+        #result {
+            border: solid 1px;
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            margin-left: 100px;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+
+        }
+
+        li {
+            border: 1px dashed purple;
+            margin-left: 5px;
+            width: 100px;
+            text-align: center;
+        }
+
+        li>a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <!-- 함수사용 (각각의 색이 인수) -->
+        <li><a href="#" onclick="changeBg('green')">Green</a></li>
+        <li><a href="#" onclick="changeBg('orange')">Orange</a></li>
+        <li><a href="#" onclick="changeBg('purple')">Purple</a></li>
+    </ul>
+
+
+    <!-- 결과창 -->
+    <div id="result"></div>
+
+    <script>
+        //함수 선언 부분 /함수명 (매개변수)
+        function changeBg(color) {
+            let result = document.getElementById('result');
+            result.style.backgroundColor = color;
+        }
+    </script>
+</body>
+
+</html>

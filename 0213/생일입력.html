@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="txt"></p>
+    <script>
+        // var 변수 선언할때 사용하단
+        // let 에크마 6버전(2015년)부터 사용
+        // const 상수 : 변하지 않는 상수를 입력받을때 사용
+
+        const pTxt = document.getElementById('txt')
+        const currentYear = 2024;
+        let birthYear;
+        let age;
+        let name;
+
+        name = prompt("이름을 입력하세요.", " ");
+        birthYear = prompt("태어난 연도를 입력하세요. (ㅛㅛ) YYYY")
+        age = currentYear - birthYear; //현재나이
+        // document.write(currentYear + "년 현재<br>?")
+        // document.write(name + "님, " + birthYear +
+        //     "년에 태어난 사람의 나이는" + age + "세 입니다.")
+        // null 값이 유효하지 않음
+        pTxt.innerHTML = `${currentYear}년 현재 <br> ${name}님, ${birthYear}년에 태어난
+        사람의 나이는 ${age}세 입니다.`
+
+    </script>
+</body>
+
+</html>
