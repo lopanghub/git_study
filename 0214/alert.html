@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alert 알림창 표시</title>
+</head>
+
+<body>
+    <h2>alert 알림 창 표시</h2>
+    <p>alert 알림 창 표시 내용 </p>
+    <img src="../images/sec3.jpg" id="pic">
+
+
+    <script>
+        // 변수 이름 지을때 맨 앞에 올 수 있는 특수 문자 _, $, 영문자
+        let $pic = document.getElementById('pic')
+        $pic.onclick = function () {//익명함수
+            alert("이미지를 클릭했습니다.")
+        }
+    </script>
+</body>
+
+</html>

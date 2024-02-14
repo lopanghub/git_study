@@ -17,6 +17,7 @@
 <body>
     <h2 id="summary"></h2>
     <h2 id="average"></h2>
+    <!-- <h3 id="testResult"></h3> -->
     <script>
         // 3과목의 점수를 입력 받아 화면에 출력하는
         let kor = Number(prompt("국어점수는?"))
@@ -33,7 +34,30 @@
             `당신의 평균 점수는 ${avg}점입니다.`
         //화면에 출력
 
+        //if~else
+        let message = '시험 결과';
 
+        if (avg >= 90) {
+            message = 'A';
+        } else if (avg >= 80) {
+            message = 'B';
+        } else {
+            message = '재시험'; 11
+        }
+
+        // A,B 일 때 합격입니다. 그 외에는 불합격입니다.
+        // const testResult = document.getElementById('testResult')
+        if (message == 'A' || 'B') {
+            document.write("<h3>축하 합니다 합격!입니다</h3>");
+        } else {
+            document.write("<h3>안타깝게도 불합격 입니다...</h3>");
+
+        }
+
+        console.log(sum);
+        console.log(message);
+        console.log(avg);
+        document.write("<h3>당신의 시험결과는 " + message + " 입니다</h3>");
 
     </script>
 </body>

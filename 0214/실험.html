@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            font-size: 3em;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        li {
+            width: 100px;
+            height: 30px;
+        }
+
+        #box1 {
+            background-color: red;
+        }
+
+        #box2 {
+            background-color: orange;
+        }
+
+        #box3 {
+            background-color: yellow;
+        }
+
+        #box4 {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="result">0</h1>
+    <ul>
+        <li id="box1" class="col" onclick="changeColor('red')">red</li>
+        <li id="box2" class="col" onclick="changeColor('orange')">orange</li>
+        <li id="box3" class="col" onclick="changeColor('yellow')">yellow</li>
+        <li id="box4" class="col" onclick="changeColor('green')">green</li>
+
+    </ul>
+
+    <script>
+        let col = document.querySelector('.col')
+        col.onclick = changeColor;
+
+        function changeColor(color) {
+            document.querySelector('h1').style.color = color
+        }
+    </script>
+</body>
+
+</html>

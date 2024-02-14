@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for 반복문</title>
+</head>
+
+<body>
+
+    <script>
+        // 1부터 5까지 더하기
+        let sum = 0;
+        sum += 1;
+
+        document.write(`1부터 5까지 합  ${sum}  <br>`)
+
+        // for문으로 1부터 5까지 더하기
+        /* 
+        for(초기문; 조건문; 증감문){
+            반복 실행할 내용
+        }
+        for 문 처음반복시 1 초기문; 2 조건문 순
+        두번째 반복부터 1증감문 ; 2조건문 순 */
+        let sumFor = 0;
+        for (let i = 0; i < 6; i++) {
+            sumFor += i;
+        }
+        document.write(`1부터 5까지 합  ${sumFor}  <br>`)
+
+        //for 문으로 1부터 1000까지 더하기
+        let $1000 = 0;
+        for (let i = 0 ; i<1001; i++){
+            $1000 += i;
+        }
+        document.write(`1부터 1000까지 합  ${$1000}  <br>`)
+
+        // 1~10까지 숫자 중 for 짝수만 더하기, 홀수만 더하기
+        // 별찍기
+
+    </script>
+</body>
+
+</html>

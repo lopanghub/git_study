@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세션 선택 - switch 문</title>
+</head>
+
+<body>
+
+    <script>
+        let session = prompt("관심 세션을 선택하세요. 1-마케팅 2-개발 3-디자인")
+
+        switch (session) {
+            case "1": document.wrtie(`<p>1마케팅 세션은 201호에서 진행 먼 근트롱이여</p>`)
+                break;
+            case "2": document.wrtie("<p>개발 세션은 201호에서 진행 방겹치는거 </p>")
+                break;
+            case "3": document.wrtie("<p>디자인 세션은 205호에서 진행 할끼ㅏ요</p>")
+                break;
+            default: alert("잘못 입력했습니다")
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rowhffu tkffuwnj</title>
+    <style>
+        h1 {
+            font-size: 3em;
+        }
+
+        div {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            /* background-color: black */
+        }
+
+        #red {
+            background-color: red;
+        }
+
+        #orange {
+            background-color: orange;
+        }
+
+        #yellow {
+            background-color: yellow;
+        }
+
+        #green {
+            background-color: green;
+        }
+
+        #blue {
+            background-color: blue;
+        }
+
+        #brown {
+            background-color: brown;
+        }
+
+        #gray {
+            background-color: gray;
+        }
+
+        #black {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="zero">0</h1>
+
+    <div class="color" id="red"></div>
+    <div class="color" id="orange"></div>
+    <div class="color" id="yellow"></div>
+    <div class="color" id="green"></div>
+    <div class="color" id="blue"></div>
+    <div class="color" id="brown"></div>
+    <div class="color" id="gray"></div>
+    <div class="color" id="black"></div>
+
+    <script>
+        const div = document.querySelectorAll('div')
+        // const style = window.getComputedStyle(document.querySelectorAll('div'))
+        // const bgColor = style.getPropertyValue('background-color');
+
+        for (let i = 0; i < div.length; i++) {
+            div[i].addEventListener("click", function (e) {
+                // document.getElementById('zero').style.color = bgColor
+                const bgColor = window.getComputedStyle(e.target).backgroundColor;
+                document.getElementById('zero').style.color = bgColor
+            })
+        }
+
+
+        // 여기에 칼라를 직접 입력하지 않고 bgColor를 쓰고 싶은데
+        // 문제 div로 설정하니까 맨 앞 레드만 정상작동된다
+    </script>
+</body>
+
+</html>

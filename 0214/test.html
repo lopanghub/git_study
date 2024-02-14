@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mark"></div>
+    <h1 id="result"></h1>
+    <p id="oe"></p>
+    <script>
+        let radius = Number(prompt("반지름의 값은?"))
+
+        function area(radius) {
+            return radius * radius;
+        }
+
+        let areaCircle = area(radius)
+
+        document.getElementById('result').innerHTML = `원의 넓이는 ${areaCircle}πpx²입니다.`
+        document.getElementById('mark').style.width = `${radius * 2}px`
+        document.getElementById('mark').style.height = `${radius * 2}px`
+        document.getElementById('mark').style.backgroundColor = 'black'
+
+
+        if (area % 2 == 1) {
+            document.getElementById('oe').innerText =
+                `홀수입니다.`
+        } else {
+            document.getElementById('oe').innerText =
+                `짝수입니다.`
+
+        }
+    </script>
+</body>
+
+</html>

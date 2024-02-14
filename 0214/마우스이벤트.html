@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rect {
+            width: 200px;
+            height: 200px;
+            border: 5px solid olive;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="rect"></div>
+
+    <script>
+        let $rect = document.querySelector('.rect');
+        $rect.addEventListener("mouseover", function () {
+            $rect.style.backgroundColor = "green";
+            $rect.style.borderRadius = "50%";
+        })
+
+        $rect.addEventListener("mouseout", function () {
+            $rect.style.backgroundColor = "";
+            $rect.style.borderRadius = "";
+        })
+
+    </script>
+</body>
+
+</html>
