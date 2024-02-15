@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요소속성추출</title>
+</head>
+
+<body>
+    <input type="button" id="input" value="hi">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", e => {
+            let input = document.querySelector("input")
+            input.addEventListener("click", e => {
+                //1. console.log(e.target.getAttribute("type"))
+                // 2. type을 text로 벼녁ㅇ
+                // e.target.setAttribute("type", "text")
+                // 3. 토글로 변경
+                if(e.target.getAttribute("type")==="button"){
+                    e.target.setAttribute("type", "text")
+                }
+            })
+            input.addEventListener("change", e => {
+                // e.target.setAttribute("type", "button")
+                if(e.target.getAttribut("type")==="text"){
+                    e.target/setAttribute("type", "button")
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

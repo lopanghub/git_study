@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클릭 위치</title>
+</head>
+<body>
+    <h2>이미지를 클릭한 위치 알아내기</h2>
+    <p>event 객체를 함수의 인수로 사용한다</p>
+    <img src="../images/sec3.jpg" id="pic">
+
+    <script>
+        let $pic = document.getElementById("pic")
+        $pic.onclick = function(event){
+            alert("이벤트 유형 : " + event.type +
+             " 이벤트 발생 위치 : " + event.pageX + "," + event.pageY)
+        
+
+        // 이미지 경로 확인
+            alert("클릭 이미지 파일 "+ this.src);
+        }
+    </script>
+</body>
+</html>

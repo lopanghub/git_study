@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML</title>
+    <style>
+        h2 {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="innerH"></div>
+    <div id="innerH2"></div>
+    <h2>innerHTML을 써봅시다</h2>
+    <button onclick="subway()">Subway 버튼</button>
+    <button onclick="bus()">Bus 버튼</button>
+
+
+    <script>
+        const divBox1 = document.getElementById("innerH")
+        const divBox2 = document.getElementById("innerH2")
+
+        let subwayV = false;
+        function subway() {
+            let name = "subway";
+            let city = "서울대 입구역";
+
+            if (subwayV == true) {
+                divBox1.innerHTML = (name + city);
+                subwayV = false;
+            } else {
+                divBox1.innerHTML = "";
+                subwayV = true;
+            }
+        }
+
+        function bus() {
+            let number = 1234;
+            let stop = "낙성대";
+
+            document.getElementById("innerH2").innerHTML = (number + stop);
+        }
+    </script>
+</body>
+
+</html>

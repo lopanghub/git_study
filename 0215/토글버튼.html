@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>토글버튼</title>
+    <style>
+        img {
+            width: 200px;
+            height: 150px;
+        }
+
+        .pic1 {
+            display: block;
+        }
+
+        .pic2 {
+            display: none;
+        }
+
+        .pic1.active {
+            display: none;
+        }
+
+        .pic2.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../images/sec1.jpg" class="pic1">
+    <img src="../images/sec2.jpg" class="pic2">
+    <button class="toggleBtn">토글버튼</button>
+
+    <script>
+        const $pic1 = document.querySelector('.pic1')
+        const $pic2 = document.querySelector('.pic2')
+        const $toggleBtn = document.querySelector('.toggleBtn');
+
+        // add와 remove로 추가와 지우기를 한번에 사용 toggle
+        $toggleBtn.addEventListener("click", () => {
+            $pic1.classList.toggle("active"); //active가 없으면 추가해주고
+            $pic2.classList.toggle("active"); //active가 있으면 빼준다
+        })
+
+    </script>
+</body>
+
+</html>

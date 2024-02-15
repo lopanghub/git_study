@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단을 외자</title>
+    <style>
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+
+        .box {
+            border: 1px solid;
+            width: 200px;
+            height: 500px;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>구구단</h1>
+    <main>
+        <div class="box">
+            <h2>1단</h2>
+            <pre id="mul1"></pre>
+        </div>
+        <div class="box">
+            <h2>2단</h2>
+            <pre id="mul2"></pre>
+        </div>
+        <div class="box">
+            <h2>3단</h2>
+            <pre id="mul3"></pre>
+        </div>
+        <div class="box">
+            <h2>4단</h2>
+            <pre id="mul4"></pre>
+        </div>
+        <div class="box">
+            <h2>5단</h2>
+            <pre id="mul5"></pre>
+        </div>
+        <div class="box">
+            <h2>6단</h2>
+            <pre id="mul6"></pre>
+        </div>
+        <div class="box">
+            <h2>7단</h2>
+            <pre id="mul7"></pre>
+        </div>
+        <div class="box">
+            <h2>8단</h2>
+            <pre id="mul8"></pre>
+        </div>
+        <div class="box">
+            <h2>9단</h2>
+            <pre id="mul9"></pre>
+        </div>
+    </main>
+
+
+    <script>
+        // 반복문으로 하는건 맞는데 how? 숫자를 고정 시키고 반복문으로 1시작 10이하?
+        // let number = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        // let $mul1 = document.getElementById("mul1");
+
+        // for (i = 0; i < 9; i++) {
+        //     let result = "";
+        //     result = 1 * number[i]
+        // }
+
+        // $mul1.textContent = result
+
+        for (let i = 1; i <= 9; i++) {
+            let result = "";
+            for (let j = 1; j <= 9; j++) {
+                result += `${i} x ${j} = ${i * j}\n`;
+            }
+            document.getElementById(`mul${i}`).textContent = result;
+        }
+
+
+        // 안됐던 이유 i는 for 내부에서만 작동하는 지역변수이기 때문에 밖으로
+        // 빼내서 쓰면 바로 오류가 생긴다
+    </script>
+</body>
+
+</html>

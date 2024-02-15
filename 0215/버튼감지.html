@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼감지_334</title>
+</head>
+
+<body>
+    <button>test</button>
+    <button onmouseover="red(event)" onmouseleave="blue(event)">here</button>
+    <button>text</button>
+
+    <script>
+        function red(e) {
+            e.target.style.backgroundColor = "red"
+        }
+        function blue(e) {
+            e.target.style.backgroundColor = "blue"
+        }
+    </script>
+</body>
+
+</html>

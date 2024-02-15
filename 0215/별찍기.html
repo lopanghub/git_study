@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>별찍기</title>
+</head>
+
+<body>
+    <pre id="star"></pre>
+
+
+    <script>
+        // 반복해서 별찍기
+        let content = "";
+
+
+        for (let i = 0; i < 20; i++) {
+            let size = i
+            for (let j = 0; j < size; j++) {
+                content += "★"
+            }
+            content += '\n';
+        }
+
+        document.getElementById("star").textContent = content;
+    </script>
+</body>
+
+</html>

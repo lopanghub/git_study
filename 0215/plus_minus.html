@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>plus_minus</title>
+</head>
+<body>
+    <a href="#" id="btnPlus">plus</a>
+    <a href="#" id="btnMinus">minus</a>
+
+    <div class="inText"></div>
+
+    <script>
+        const $btnPlus = document.getElementById("btnPlus");
+        const $btnMinus = document.getElementById("btnMinus");
+        let $inText = document.querySelector('.inText');
+        let num = 0 ;  //제어할 숫자를 0으로 초기화
+
+        //btnPlus를 클릭할 때마다 함수
+        $btnPlus.addEventListener("click", e => {
+            e.preventDefault(); //새로고침 방지
+            num++; //1씩증가
+            $inText.innerText = num;
+        })
+
+        //btnMinus를 클릭할 때마다 함수
+        $btnMinus.addEventListener("click", e =>{
+            e.preventDefault();
+            num--;
+            $inText.textContent = num;
+        })
+    </script>
+</body>
+</html>

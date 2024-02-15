@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이벤트02</title>
+</head>
+
+<body>
+    <img src="../images/coffee-2242213_1280.jpg" id="cover">
+
+    <script>
+        let cover = document.getElementById("cover")
+
+        // 마우스를 이미지에 올렸을때 mouseover, dblclick, mousemove
+        cover.addEventListener("dblclick", () => {
+            cover.src = "../images/../images/city-4791269_1280.png"
+        })
+
+        // 마우스 이미지 밖으로 mouseout, mouseleave
+        cover.addEventListener("mouseout", () => {
+            cover.src = "../images/sec2.jpg";
+        })
+    </script>
+</body>
+
+</html>

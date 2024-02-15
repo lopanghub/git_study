@@ -7,14 +7,15 @@
     <title>rowhffu tkffuwnj</title>
     <style>
         h1 {
-            font-size: 3em;
+            font-size: 5em;
+            margin-left: 200px;
+
         }
 
         div {
             display: inline-block;
             width: 50px;
             height: 50px;
-            /* background-color: black */
         }
 
         #red {
@@ -48,22 +49,41 @@
         #black {
             background-color: black;
         }
+
+        /* 버튼 수정 */
+        .btn{
+            display: flex;
+            margin-left: 150px;
+        }
+        button {
+            border-radius: 10px;
+            font-size: 2em;
+            padding: 0;
+            margin-right: 5px;
+        }
     </style>
 </head>
 
 <body>
     <h1 id="zero">0</h1>
+    <aside class="btn">
+        <button id="plus">plus</button>
+        <button id="minus">minus</button>
+    </aside>
 
-    <div class="color" id="red"></div>
-    <div class="color" id="orange"></div>
-    <div class="color" id="yellow"></div>
-    <div class="color" id="green"></div>
-    <div class="color" id="blue"></div>
-    <div class="color" id="brown"></div>
-    <div class="color" id="gray"></div>
-    <div class="color" id="black"></div>
+    <section>
+        <div class="color" id="red"></div>
+        <div class="color" id="orange"></div>
+        <div class="color" id="yellow"></div>
+        <div class="color" id="green"></div>
+        <div class="color" id="blue"></div>
+        <div class="color" id="brown"></div>
+        <div class="color" id="gray"></div>
+        <div class="color" id="black"></div>
+    </section>
 
     <script>
+        const H1 = document.getElementById('zero')
         const div = document.querySelectorAll('div')
         // const style = window.getComputedStyle(document.querySelectorAll('div'))
         // const bgColor = style.getPropertyValue('background-color');
@@ -72,13 +92,28 @@
             div[i].addEventListener("click", function (e) {
                 // document.getElementById('zero').style.color = bgColor
                 const bgColor = window.getComputedStyle(e.target).backgroundColor;
-                document.getElementById('zero').style.color = bgColor
+                H1.style.color = bgColor
             })
         }
 
+        // 플러스 마이너스 숫자 버튼 추가
+        let num = 0;
+        const btnPlus = document.getElementById("plus")
+        const btnMinus = document.getElementById("minus")
 
-        // 여기에 칼라를 직접 입력하지 않고 bgColor를 쓰고 싶은데
-        // 문제 div로 설정하니까 맨 앞 레드만 정상작동된다
+        btnPlus.addEventListener('click', e => {
+            e.preventDefault();
+            num++;
+            H1.textContent = num;
+        })
+        btnMinus.addEventListener('click', e => {
+            e.preventDefault();
+            num--;
+            H1.textContent = num;
+        })
+
+
+
     </script>
 </body>
 
