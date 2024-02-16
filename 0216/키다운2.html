@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keydown</title>
+</head>
+<body>
+    <p>keydown <input id="keydown"></p>
+    <p>change <input id="change"></p>
+    <p><input id="input"></p>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", e=>{
+            document.addEventListener("keydown", e =>{
+                console.log(e.key);
+                if(e.key === 'q'){
+                    alert("this is Q");
+                }
+            })
+        })
+    </script>
+</body>
+</html>

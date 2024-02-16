@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표함수</title>
+    <style>
+        #box {
+            width: 150px;
+            height: 150px;
+            background-color: palevioletred;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script>
+        const box = document.querySelector("#box");
+
+        // 마우스 올렸을때
+        box.addEventListener('mouseenter', () => {
+            box.style.backgroundColor = "orange";
+        })
+
+        // 마우스 내렸을 때
+        box.addEventListener('mouseleave', ()=>{
+            box.style.backgroundColor = 'powderblue';
+        })
+    </script>
+</body>
+
+</html>

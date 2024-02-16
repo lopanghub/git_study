@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수2</title>
+</head>
+<body>
+    
+
+    <script>
+        function sumMulti(x,y){
+            if(x==y){
+                return x*y;
+            } else{
+                return x+y;
+            }
+        }
+        console.log(sumMulti(5,10));
+        console.log(sumMulti(10,10));
+        console.log(sumMulti(100,10));
+        // 함수 실행 여러번 할 수 있다
+
+
+        // Number(), parseInt() 정수로 변환, parseFloat() 실수(소수점)
+        let num1 = parseInt(prompt("비교할 첫 번째 숫자"));
+        let num2 = parseInt(prompt("비교할 두 번째 숫자"));
+
+        compare(num1, num2);//함수 실행을 꼭 할 것 //호이스팅(위치 크게 상관 x)
+        function compare (x,y) {
+            if (x == y){
+                alert(`${x}와 ${y}는 같다`);
+            } else if ( x >y ) {
+                alert(`${x}가 ${y}보다 크다`);
+            } else {
+                alert(`${x}가 ${y}보다 작다`);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <style>
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+        img {
+            width: 300px;
+        }
+
+        /* 토글 전용 액티브 */
+        #off-toggle {
+            display: block;
+        }
+
+        #on-toggle {
+            display: none;
+        }
+
+        #off-toggle.active {
+            display: none;
+        }
+
+        #on-toggle.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>What Can javaScript Do?</h1>
+    <main>
+        <div>
+            <p>1. 이미지 온클릭</p>
+            <img src="../images/off.png" id="off-onclick">
+        </div>
+        <div>
+            <p>2. 마우스 오버 아웃</p>
+            <img src="../images/off.png" id="off-mouseover">
+        </div>
+        <div>
+            <p>3. 토글 버튼</p>
+            <img src="../images/off.png" id="off-toggle">
+            <img src="../images/on.png" id="on-toggle">
+            <button id="toggle">토글버튼</button>
+        </div>
+        <div>
+            <p>4. if문</p>
+            <img src="../images/off.png" id="off-if">
+            <button id="if-btn">버튼</button>
+        </div>
+        <div>
+            <p>5. 버튼 두 개</p>
+            <img src="../images/off.png" id="off2btn">
+            <button id="btn-off">turn off</button>
+            <button id="btn-on">turn on</button>
+        </div>
+
+        <div>
+            <p>6. 이미지 클릭(if)</p>
+            <img src="../images/off.png" id="off-gpt">
+        </div>
+        <div>
+            <p>7. if문 버튼 두개</p>
+            <img src="../images/off.png" id="off-if2btn">
+            <button id="if-2btn-off">turn off</button>
+            <button id="if-2btn-on">turn on</button>
+        </div>
+        <div>
+            <p>8.. if문 다른 방식</p>
+            <img src="../images/off.png" id="off-another">
+            <button id="if-another-off">turn off</button>
+            <button id="if-another-on">turn on</button>
+        </div>
+    </main>
+    <script>
+        //이미지 온클릭
+        let $imgOnclick = document.getElementById('off-onclick')
+
+        $imgOnclick.onclick = change
+        function change() {
+            $imgOnclick.src = "../images/on.png"
+        }
+
+        //마우스 오버 아웃
+        let imgMouseover = document.getElementById('off-mouseover')
+        imgMouseover.addEventListener('mouseover', () => {
+            imgMouseover.src = "../images/on.png";
+        })
+        imgMouseover.addEventListener('mouseleave', () => {
+            imgMouseover.src = "../images/off.png";
+        })
+
+        //토글버튼 사용
+        let imgToggleOff = document.getElementById('off-toggle')
+        let imgToggleOn = document.getElementById('on-toggle')
+        const btnToggle = document.getElementById('toggle')
+
+        btnToggle.addEventListener('click', e => {
+            imgToggleOff.classList.toggle('active');
+            imgToggleOn.classList.toggle('active');
+        })
+
+        //if문 사용
+        let judge = true;
+        let imgIf = document.getElementById('off-if')
+        const btnIf = document.getElementById('if-btn')
+
+        btnIf.onclick = onOff
+        function onOff() {
+            if (judge == true) {
+                judge = false;
+                imgIf.src = "../images/on.png"
+            } else {
+                judge = true;
+                imgIf.src = "../images/off.png"
+            }
+        }
+
+        //버튼 2개
+        const btnOff = document.getElementById('btn-off')
+        const btnOn = document.getElementById('btn-on')
+        let img2Btn = document.getElementById('off2btn')
+
+        btnOff.onclick = turnOff
+        function turnOff() {
+            img2Btn.src = "../images/off.png"
+        }
+        btnOn.addEventListener('click', e => {
+            img2Btn.src = "../images/on.png"
+        })
+
+        // 이미지 클릭 if
+        const imgGpt = document.getElementById('off-gpt')
+
+        imgGpt.addEventListener('click', function () {
+
+            if (imgGpt.src.endsWith("off.png")) {
+                imgGpt.src = "../images/on.png"
+
+            } else {
+                imgGpt.src = "../images/off.png"
+            }
+        })
+
+        // 7. if문 버튼 2개
+        let if2Btn = document.getElementById('off-if2btn')
+        const if2BtnOff = document.getElementById('if-2btn-off')
+        const if2BtnOn = document.getElementById('if-2btn-on')
+        let $jud = true;
+
+
+        if2BtnOn.addEventListener('click', e => {
+            if (if2Btn.src != "../images/on.png")
+                if2Btn.src = "../images/on.png"
+        })
+
+        if2BtnOff.onclick = if2Btn_off
+        function if2Btn_off() {
+            if (if2Btn.src != "../images/off.png") {
+                if2Btn.src = "../images/off.png"
+            }
+        }
+        // 다른 방식
+        let imgAnother = document.getElementById('off-another')
+        const imgAnotherOff = document.getElementById('if-another-off')
+        const imgAnotherOn = document.getElementById('if-another-on')
+        let $judge = true;
+
+        imgAnotherOn.addEventListener('click', e => {
+            if ($judge == true) {
+                $judge = false;
+                imgAnother.src = "../images/on.png"
+
+            }
+        })
+        imgAnotherOff.addEventListener('click', e => {
+            if ($judge == false) {
+                $judge = true;
+                imgAnother.src = "../images/off.png"
+
+            }
+        })
+
+    </script>
+</body>
+
+</html>

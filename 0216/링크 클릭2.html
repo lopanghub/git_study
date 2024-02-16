@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>링크클릭</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <ul class="list">
+        <li><a href="#">item1</a></li>
+        <li><a href="#">item2</a></li>
+        <li><a href="#">item3</a></li>
+        <li><a href="#">item4</a></li>
+    </ul>
+
+    <script>
+        const list = document.querySelectorAll('.list li');
+
+        // link.addEventListener('click', e => {
+        //     e.preventDefault();
+        //     console.log("링크를 클릭했습니다")
+
+        // })
+
+        for (let el of list) {
+            el.addEventListener("click", e => {
+                e.preventDefault(); // 새로고침 방지
+                console.log(e.currentTarget.innerText)
+            })
+        }
+        
+        // currentTarget : 선택한 텍스트를 불러온다??
+        // 택스트 내용 변경하고자 할때
+        // 선택자.innerText = "변경할 텍스트"
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>링크클릭</title>
+    <style>
+        a{
+            font-size: 120px;
+            color:cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.naver.com" target="_blank">click</a>
+
+    <script>
+        const link = document.querySelector('a');
+
+        link.addEventListener('click', e=>{
+            e.preventDefault();
+            console.log("링크를 클릭했습니다")
+
+        })
+        //preventDefault는 기본 기능을 실행하지 말라는 명령어
+        // 링크 클릭시 기본 기능인 링크 이동을 막고.
+        // 콘솔 창에 텍스트가 나타나도록 한다.
+
+        //e값은 이벤트 객체
+        //이벤트 명 뒤에 있는 괄호에서 전달되는 값 하나이면 괄호 생략 가능
+    </script>
+</body>
+</html>
