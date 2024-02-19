@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트노드 추가</title>
+    <style>
+        p {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>노드 리스트</h1>
+    <pre>
+        텍스트 노드 추가하기
+        DOM에 새로운 요소를 추가할때는
+        가장 먼저 요소 노드를 만들어야 한다
+
+        1. 요소 노드 만들기 createElement() 메서드
+        2. 텍스트 노드 만들기 createTextNode()
+        3. 자식 노드 연결하기 appendChild()
+    </pre>
+
+    <!-- 인라인 이벤트 모델 vs 표준 이벤트 모델 -->
+    <!-- this.onclick = ''; 한번만 클릭 -->
+    <a href="#" onclick="addContents(); this.onclick='';">추가하려면 누르세요</a>
+    <div id="info"></div>
+
+    <script>
+        function addContents() {
+            let newP = document.createElement("p");
+            let textNode = document.createTextNode("추가될 내용 부분")
+            newP.appendChild(textNode);
+            newP.onclick = function () {
+                this.remove();
+            }
+            document.body.appendChild(newP);
+
+        }
+    </script>
+</body>
+
+</html>

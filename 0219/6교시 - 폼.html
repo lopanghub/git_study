@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>곱셈 구하기</h1>
+    <p>두 수를 입력한 후 [계산하기]를 클릭하세요</p>
+
+    <div id="input">
+        <input id="firstNum" type="text" placeholder="첫 번째 수"><br>
+        <input id="secondNum" type="text" placeholder="두 번째 수">
+    </div>
+    <button id="pay">계산하기</button>
+    <div id="result"></div>
+
+
+    <script>
+        let pay = document.getElementById('pay');
+        pay.onclick = function (){
+            let a = document.getElementById('firstNum').value;
+            let b = document.getElementById('secondNum').value;
+            let c = a*b;
+            let result = document.getElementById('result');
+            result.textContent = `답은 ${c}입니다.`;
+        }
+    </script>
+</body>
+</html>

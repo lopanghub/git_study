@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전구1</title>
+    <style>
+        img {
+            width: 300px;
+            height: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>onclick 사용</p>
+    <img src="../images/off.png" id="myImage">
+    <!-- <img src="../images/on.png" alt=""> -->
+    <button id="onBtn">켜기</button>
+    <button id="offBtn">끄기</button>
+
+    <script>
+        let $myImage = document.getElementById('myImage')
+        let $onBtn = document.getElementById('onBtn')
+        let $offBtn = document.getElementById('offBtn')
+
+        $onBtn.onclick = changePic1;//함수 실행
+        $offBtn.onclick = changePic2;
+
+        function changePic1() {
+            $myImage.src = "../images/on.png"
+        }
+        function changePic2() {
+            $myImage.src = "../images/off.png"
+        }
+    </script>
+</body>
+
+</html>

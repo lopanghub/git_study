@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록</title>
+    <style>
+        .container {
+            width: 100vw;
+            height: 1000px;
+            border: 5px dashed brown;
+            background-color: darkgoldenrod;
+            padding: 40px;
+        }
+
+        label {
+            display: block;
+        }
+
+        #name {
+            margin-left: 16px
+        }
+
+        input {
+
+            width: 300px;
+            display: inline-block;
+        }
+
+        button {
+            width: 200px;
+            height: 50px;
+            border: 1px solid red;
+            background-color: yellowgreen;
+            margin-top: 20px;
+        }
+
+        #result input {
+            display: inline-block;
+            margin: 0;
+            margin-right: 5px;
+            width: 20px;
+        }
+
+        #result p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>방명록</h1>
+        <h3><i>방명록을 기록해 보세요</i></h3>
+        <label for="name">이름
+            <input type="text" id="name"></label>
+        <label for="addr">연락처
+            <input type="text" id="addr"></label>
+        <label for="word">한마디
+            <input type="text" id="word"></label>
+        <button id="btn">방명록 남기기</button>
+        <hr>
+        <!-- <input type="checkbox" id=""></input> -->
+        <div id="result"> </div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('btn')
+        let result = document.getElementById('result')
+
+        btn.addEventListener('click', e => {
+
+            let name = document.getElementById('name').value
+            let addr = document.getElementById('addr').value
+            let word = document.getElementById('word').value
+
+            //체크박스 생성
+            let checkBox = document.createElement("input");
+            checkBox.type = "checkbox"
+            newP.appendChild(checkBox);
+            //p생성
+            let newP = document.createElement("p")
+            let textNode = document.createTextNode(`${name}(${addr}) : ${word}`)
+            newP.appendChild(textNode)
+
+            result.appendChild(newP);
+        })
+
+    </script>
+</body>
+
+</html>

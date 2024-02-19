@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input 연산</title>
+</head>
+
+<body>
+    <input type="text" id="first" placeholder="1번">
+    <input type="text" id="second" placeholder="2번">
+    <input type="button" id="btn">버튼
+    <p>두 수의 합은? <span id="sum"></span></p>
+    <p>두 수의 차는? <span id="sub"></span></p>
+    <p>두 수의 곱은? <span id="mul"></span></p>
+    <p>두 수를 나누면? <span id="div"></span></p>
+
+    <script>
+
+        const btn = document.getElementById('btn')
+
+
+        btn.addEventListener('click', () => {
+            let firNum = document.getElementById('first').value
+            let secNum = document.getElementById('second').value
+
+
+
+            firNum = parseFloat(firNum);
+            secNum = parseFloat(secNum);
+
+            const summary = firNum + secNum;
+            const subtraction = Math.abs(firNum - secNum);
+            const multiplication = firNum * secNum;
+            const divide = secNum !== 0 ? firNum / secNum : '불가능';
+
+            document.getElementById('sum').textContent = summary
+            document.getElementById('sub').textContent = subtraction
+            document.getElementById('mul').textContent = multiplication
+            document.getElementById('div').textContent = divide
+        })
+
+
+    </script>
+</body>
+
+</html>

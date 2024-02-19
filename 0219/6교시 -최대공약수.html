@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최대 공약수</title>
+</head>
+
+<body>
+    <h1>최대 공약수</h1>
+    <p>두 수를 입력한 [계산하기]를 클릭하세요</p>
+    <form action="">
+        <label for="number1">첫 번째 수</label>
+        <input type="text" id="number1" placeholder="첫 번째 수">
+        <label for="number2">두 번째 수</label>
+        <input type="text" id="number2" placeholder="두 번째 수">
+        <button type="button" id="calc">계산하기</button>
+    </form>
+    <!-- 결과가 나올 부분 -->
+    <div id="result"></div>
+
+    <script>
+        // 두 입력값을 변수로 가져온다(변수 1 n, 변수2 m)
+        // 버튼 변수로 가져온다
+        // 결과 result 변수로 가져온다
+        const n = document.querySelector('#number1')
+        const m = document.querySelector('#number2')
+        const button = document.getElementById('calc')
+        let result = document.querySelector('#result')
+
+
+        // 버튼 클릭하면 result 변수에는 결과값을 나타낸다. < 함수>
+        // ???.innerText = getGCD(n.value, ??)
+        button.onclick = function () {
+            result.innerText = `결과는 ${getGCD(n.value, m.value)}입니다`;
+        }
+
+        // 받아온 두 값 비교 <함수2> getGCD(변수 1n, 2m)
+        // 나누어서 나머지 0이 되도록 두 값 모두 && and 연산자 //모두 참
+        function getGCD(n, m) {
+            let max = n > m ? n : m; //어떤 수가 더 큰지 비교
+            let GCD = 0;
+            for (let i = 1; i <= max; i++) {
+                if (n % i === 0 && m % i === 0) {
+                    GCD = i;
+                }
+            }
+            return GCD;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerText, innerHTML</title>
+</head>
+
+<body>
+    <button onclick="innText()">innerText로 표시하기</button>
+    <button onclick="innHTML()">innerHTML로 표시하기</button>
+    <button onclick="textCon()">textContent로 표시하기</button>
+    <button onclick="Imgpush()">img 표시하기</button>
+
+    <pre>
+        textContent 속성 : 요소의 텍스트 콘텐츠만 반환하거나
+        설정하고 그 안에 있는 모든 HTML태그 또는 요소는 무시한다
+        콘텐츠를 일반 텍스트로 취급한다
+    </pre>
+
+    <h1>현재 시각 : </h1>
+    <div id="current"></div>
+
+    <script>
+        let now = new Date(); //현재 시간
+        let img = document.querySelector('img');
+        let img3 = "../images/on.png"
+
+        function innText() {
+            document.getElementById("current").innerText = now;
+        }
+        function innHTML() {
+            document.getElementById("current").innerHTML =
+                "<em>" + now + "</em>";
+        }
+        function textCon() {
+            document.getElementById("current").textContent = now;
+        }
+
+        function Imgpush() {
+            let img = document.createElement("img");// 이미지 노드 추가
+            img.setAttribute("src", img3);// 이미지 속성 추가
+            document.getElementById('current').appendChild(img); //자식 노드
+        }
+    </script>
+</body>
+
+</html>

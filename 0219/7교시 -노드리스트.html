@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>노드리스트 살펴보기</h1>
+    <p>HTML</p>
+    <p>CSS</p>
+    <p>javaScript</p>
+    <pre>
+        돔트리 : 나무처럼 생긴 웹문서에서 각 요소의 포함 관계를 나타낸 것을 DOM트리 라고 한다
+                가지와 노드, 부모요소, 자식요소
+        노드 : 가지가 갈라져 나가는 부분
+        루트노드 : 돔트리 시작부분인 html 노드는 나무뿌리에 해당
+
+        querySelectorAll()메서드를 사용하여 여러개의
+        노드를 한꺼번에 가져올 수  있는데 이렇게 가져온
+        다양한 노드 정보를 저장한 것을 '노드리스트'라고 한다
+        배열과 비슷하게 생겼고 배열처럼 사용할 수 있지만
+        배열은 아니다 DOM에서 새로운 노드를 만들어 추가하거나 
+        삭제할 때는 노드리스트를 사용해야 한다
+
+    </pre>
+
+    <script>
+        // 콘솔창에 입력해보기
+        // document.querySelectorAll('p')
+        // document.querySelectorAll('p')[2]
+        // 이후 텍스트노드, 이미지 노드 추가 파일 만들어 보기
+
+        let newP = document.createElement('p')
+        let textNode = document.createTextNode('오늘 공부할것 dom트리 객체 노드리스트 개념 다시 정리')
+        newP.appendChild(textNode)
+        document.body.appendChild(newP)
+
+        let newImg = document.createElement('img')
+        let imgSrc = '../images/orange.jpg'
+        newImg.setAttribute('src', imgSrc)
+        document.body.appendChild(newImg)
+
+        
+    </script>
+</body>
+
+</html>

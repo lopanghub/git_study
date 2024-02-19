@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시간 Date 객체의 메서드</title>
+</head>
+
+<body>
+    <h2>시 간</h2>
+    <pre>
+        자바스크립트의 내장객체에는 Array객체와 Date 객체가 대표적이다
+        객체마다 메서드와 프로퍼티가 있다.
+       
+        프로퍼트 : 객체의 특징이나 속성을 나타냄(객체의 원형)
+        메서드 : 동작을 표현
+
+        "휴대 전화하기" 프로그램
+        프로퍼티 : 제조사, 모델명, 색상, 제작년도 등
+        메서등(동작) : 전화하기, 문자보내기 등
+
+        인스턴스 : 객체의 프로퍼티와 메서드를 그대로 물려받아 똑같이 사용한다.
+        인스턴스명 뒤에 마침표(.)를 붙이고 프로퍼티와 메서드 이름을 작성한다.
+            예 : .getHours()
+            now.toLocalString() 에서 now는 인스턴스, toLocalString이 메서드
+    </pre>
+    <div id="display"></div>
+
+
+    <script>
+        // 콘솔창에 window 입력
+        // W는 대문자 : 객체를 표현
+        // alert의 f는 메서드라는 것을 알려줌
+        // f 붙어 있지 않은 것은 프로퍼티
+
+        // window.innerWidth
+        // window.print
+        // 입력해보기
+        let date = new Date();
+        console.log(date);
+        console.log(date.getFullYear()); //연도
+
+        console.log(date.getMonth()); //0~11월로 표현됨
+        let month = date.getMonth() + 1;
+        document.write(`이 달은 ${month}월 입니다. <br>`)
+        console.log(month);
+        console.log(date.getDay()); //요일이 숫자로 표현됨
+
+        //현재 시간은 시, 분, 초 입니다.
+        document.write(`오늘은 ${date.getFullYear()}년 ${month}월 ${date.getDate()}일입니다 <br><br>`)
+        document.write(`현재 시각은 ${date.getHours()}시 ${date.getMinutes()}분 ${date.getSeconds()}초 입니다 <br>`);
+
+        // 요일을 배열로 처리
+        let specialDays = new Array("일","월","화","수","목","금","토")
+        document.write(specialDays[date.getDay()]+"요일입니다. <br><br>")
+        console.log(date.getDay());
+
+        // Date 객체에서 현재 날짜와 시간 정보를 로컬 형식으로 바꿔주는 메서드
+        document.write(`현재 시각은 ${date.toLocaleString()}`)
+
+        // 밀리초(1/1000초)
+
+        // Math
+        console.log(Math.random()); //0포함한 1사이의 숫자
+        console.log(Math.random());
+        console.log(Math.random()*100 );//0~100미만까지 (100까지 나오게 +1)
+        console.log(Math.floor(Math.random()*100 +1 ));//1~100까지 
+        console.log(Math.floor(Math.random()*100 +1 ));//1~100까지 
+        console.log(Math.floor(Math.random()*100 +1 ));//1~100까지 
+        </script>
+</body>
+
+</html>
