@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        button {
+            float: right;
+        }
+
+        div {
+            width: 700px;
+            height: 500px;
+            background-color: beige;
+            border: 5px dashed brown;
+            text-align: center;
+            margin: 0 auto;
+            font-weight: bold;
+            font-size: 2em;
+            padding-top: 100px;
+        }
+
+        .box.clicked {
+            border: blue 5px dashed;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="button">모드 전환</button>
+    <div class="box">
+        <p>classList와 toggle 메서드를 <br>
+            사용하여 스타일을 껐다 켰다 할 수 있다.
+            <br><br>
+            오른쪽 위 버튼을 눌러보세요
+        </p>
+    </div>
+
+
+    <script>
+        let box = document.querySelector('.box')
+        const btn = document.getElementById('button')
+
+        btn.addEventListener('click', e => {
+            box.classList.toggle('clicked')
+            changeBackground(box);
+        })
+
+        function changeBackground(box) {
+            if (box.classList.contains('clicked')) {
+                document.body.style.backgroundColor = 'gray'
+            } else {
+                document.body.style.backgroundColor = 'white'
+            }
+        }
+
+    </script>
+</body>
+
+</html>

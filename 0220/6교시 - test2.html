@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clicked {
+            color: pink;
+            background-color: gray;
+            font-size: 2em;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>클릭해보세요</h1>
+    <ul> 할 일 목록
+        <li>👁‍🗨할 일1</li>
+        <li>👁‍🗨할 일2</li>
+        <li>👁‍🗨할 일3</li>
+        <li>👁‍🗨할 일4</li>
+        <li>👁‍🗨할 일5</li>
+    </ul>
+
+    <script>
+        //클릭하면 커지고 밑줄 그이게 this 이용
+        let list = Array.from(document.querySelectorAll('li'))
+        list.forEach(function (e) {
+            e.addEventListener('click', highlight)
+        })
+
+        function highlight() {
+            this.classList.toggle('clicked')
+        }
+
+
+    </script>
+</body>
+
+</html>

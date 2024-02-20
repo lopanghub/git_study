@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classList</title>
+    <style>
+        img {
+            width: 200px;
+        }
+
+        .clicked {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">My Profile</h1>
+    <div>
+        <img src="../images/tomato.png">
+        <div id="desc">
+            <p class="user" id="name">이름 : 도레미</p>
+            <p class="user">연락처 : 1234-5678</p>
+            <p class="user">블로그 : blog.velog</p>
+        </div>
+    </div>
+
+    <script>
+        // title을 가져와서 add로 추가 classList를 추가해보기
+        const title = document.querySelector('#title');
+        // p 눌렀을때 다른 글자 출력
+        // img 눌렀을때 다른 이미지 나오게 
+
+        title.onclick = () => {
+            if (!title.classList.contains('clicked')) {
+                title.classList.add('clicked')
+                title.innerText = "프로필"
+            } else {
+                title.classList.remove('clicked')
+                title.innerText = "My Profile"
+            }
+        }
+        // classList는 요소에 적용ㅇ한 클래스 스타일을 모두 모아놓은 프로퍼티
+        // document.querySelector('#desc p').classList
+
+        // 이미지에 적용
+        const img = document.querySelector('img')
+        img.addEventListener('click', () => {
+            if (!img.classList.contains('clicked')) {
+                img.classList.add('clicked')
+                img.src = '../images/avo.png'
+            } else {
+                img.classList.remove('clicked')
+                img.src = '../images/tomato.png'
+            }
+        })
+
+        // 글자 클릭시 효과
+
+        const name = document.getElementById('name')
+
+        name.onclick = changeName;
+        function changeName() {
+            name.classList.toggle('clicked')
+            // 토글 클릭되면 '' 다시 클릭하면 도레미
+            name.textContent = name.classList.contains('clicked') ? '' : '이름 :도레미'
+
+            // 타이핑 이펙트 클릭 상태면 이현학으로 출력
+            i = 0;
+            if (name.classList.contains('clicked')) {
+                typing();
+            }
+        }
+        const content = '이름 : 이현학'
+
+        function typing() {
+            if (i < content.length) {
+                name.textContent += content[i++]
+                setTimeout(typing, 300);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
