@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+</head>
+
+<body>
+    <!-- 상품내용이 나올 공간 -->
+    <div id="container">
+        <h3>상품 설명</h3>
+        <h2>상품 명 : HTML+CSS+자바스크립트</h2>
+        <p>코딩만 따라 해도 웹페이지가 만들어지는</p>
+        <p>반병헌 코딩 왕초보도 Ok! 기초부터 활용까지 완전정복</p>
+        <button id="addItem">장바구니에 추가하기</button>
+    </div>
+    <!-- 장바구니 영역 -->
+    <div id="shoppingList">장바구니 영역</div>
+
+    <script>
+        const addItemButton = document.querySelector('#addItem');//장바구니 추가 버튼
+        const shoppingList = document.querySelector('#shoppingList');
+        const title = document.querySelector('#container > h2') //책 제목
+
+        addItemButton.addEventListener('click', () => {
+            let newP = document.createElement('p');// 새로운 p요소 노드 만들기
+            let textNode = document.createTextNode(title.innerText); // 텍스트 노드 만들기
+            newP.appendChild(textNode); // 텍스트 노드를 p요소 노드에 추가
+            shoppingList.appendChild(newP); //p 요소를 장바구니에 추가(부모)
+        }, { once: true });//한번만 눌러지게(이벤트 리스너를 한번만 실행)
+    </script>
+</body>
+
+</html>

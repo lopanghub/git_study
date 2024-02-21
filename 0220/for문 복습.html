@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="container">
+        <h1>준비물</h1>
+        <p>여행 준비물을 기록해 보세요</p>
+        <form action="">
+            <input type="text" id="subject" autofocus>
+            <button onclick="newR(); return false;">추가하기</button>
+            <!-- return false 는 폼 기본 기능인 submit 역할을 취소함
+        입력해주지 않으면 함수를 실행하기 전에 기본기능을 먼저 함 -->
+            <hr>
+            <ul id="itemList"></ul>
+        </form>
+    </div>
+
+    <script> 
+
+        function newR() {
+            let newI = document.createElement('li')
+            let sub = document.querySelector('#subject')
+
+            let newT = document.createTextNode(sub.value);
+            newI.appendChild(newT)
+
+            let itemL = document.getElementById('itemList')
+            itemL.insertBefore(newI, itemL.childNodes[0])
+
+            sub.value = ""
+
+            let items = Array.from(document.querySelectorAll('li'))
+            // for(i=0;i<items.length;i++){
+            //     items[i].addEventListener('click', function(){
+            //         if(this.parentNode){
+            //             this.parentNode.removeChild(this);
+            //         }
+            //     })
+            // }
+            // newI.addEventListener('click', function(){
+            //     if(this.parentNode){
+            //         this.parentNode.removeChild(this);
+            //     }
+            // })
+
+            items.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    if (this.parentNode) {
+                        this.parentNode.removeChild(this);
+                    }
+                })
+            })
+        }
+
+    </script>
+</body>
+
+</html>

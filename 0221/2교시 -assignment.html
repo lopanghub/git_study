@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니 실습</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #goodsContainer {
+            display: flex;
+            margin: 10px;
+        }
+
+        .goods {
+            width: 500px;
+            font-size: 20px
+        }
+
+        .goods>img {
+            width: 300px;
+            height: 200px;
+        }
+
+        .goods>h4 {
+            color: red;
+        }
+
+        .goods>.addGoods {
+            background-color: aliceblue;
+            border: 1px blue solid;
+            color: blue;
+            width: 150px;
+            height: 40px;
+        }
+
+        .list {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 상품 공간 -->
+    <h1>자주 산 상품</h1>
+    <section id="goodsContainer">
+        <div class="goods" id="goods1">
+            <img src="https://cdn.pixabay.com/photo/2017/07/05/15/41/milk-2474993_1280.jpg" alt="">
+            <p>자바유업 저지방 우유 1.8L, 1개</p>
+            <h4>4590원</h4>
+            <button class="addGoods">장바구니 담기</button>
+        </div>
+        <div class="goods" id="goods2">
+            <img src="../images/tomato.png" alt="">
+            <p>신선한 css 방울토마토 750g, 1팩</p>
+            <h4>8500원</h4>
+            <button class="addGoods">장바구니 담기</button>
+        </div>
+        <div class="goods" id="goods3">
+            <img src="https://cdn.pixabay.com/photo/2017/06/27/22/21/banana-2449019_1280.jpg" alt="">
+            <p>스윗 HTML 바나나 1.3kg, 1개</p>
+            <h4>5390원</h4>
+            <button class="addGoods">장바구니 담기</button>
+        </div>
+    </section>
+    <section id="shoppingListContainer">
+        <div id="shoppingList">장바구니</div>
+    </section>
+
+    <script>
+        const addGoods = document.querySelectorAll('.addGoods');
+        const shoppingList = document.getElementById('shoppingList');
+        const cartItems = {};
+
+        addGoods.forEach(function (button) {
+            button.addEventListener('click', function () {
+                //해당 버튼에 가장 가까운 품목
+                const goodsNum = button.closest('.goods')
+                const goodsName = goodsNum.querySelector('p').textContent;
+
+                if (cartItems[goodsName]) {
+                    cartItems[goodsName].quantityInput.value = parseInt(cartItems[goodsName].quantityInput.value) + 1;
+                } else {
+                    //장바구니 리스트를 표시할 div 생성
+                    const itemContainer = document.createElement('div')
+                    itemContainer.classList.add('list')
+                    //장바구니 리스트 p 생성
+                    let newP = document.createElement('p');
+                    newP.textContent = goodsName;
+                    itemContainer.appendChild(newP);
+                    //품목의 수량 input 생성
+                    const goodsQuantity = document.createElement('input')
+                    goodsQuantity.type = 'number'
+                    goodsQuantity.value = 1; // 초기값 1 설정
+                    itemContainer.appendChild(goodsQuantity);
+
+                    shoppingList.appendChild(itemContainer)
+
+
+                    // 장바구니 객체에 상품명은 키로 상품정보는 값으로 저장
+                    cartItems[goodsName] = { name: goodsName, quantityInput: goodsQuantity }
+                }
+
+            })
+        })
+
+    </script>
+
+</body>
+
+</html>

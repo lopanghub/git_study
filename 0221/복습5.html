@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #imgBig>img {
+            width: 500px;
+            height: 350px;
+        }
+
+        #imgSmall>img {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>푸른 바다에 배낭을 매고</h1>
+    <div id="container">
+        <div id="imgBig">
+            <img src="../images/travel1.jpg" alt="">
+        </div>
+        <div id="imgSmall">
+            <img src="../images/travel1.jpg" alt="">
+            <img src="../images/travel2.jpg" alt="">
+            <img src="../images/travel3.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+        const selectImages = Array.from(document.querySelectorAll('#imgSmall>img'));
+        const imgBig = document.querySelector('#imgBig>img');
+        selectImages.forEach(function (image) {
+            image.addEventListener('click', function () {
+                let newBig = this.src
+                imgBig.setAttribute('src', newBig)
+            })
+        })
+    </script>
+</body>
+
+</html>

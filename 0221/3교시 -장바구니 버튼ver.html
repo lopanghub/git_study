@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 장바구니 </title>
+    <style>
+        #shoppingList {
+            width: 500px;
+            height: 300px;
+            border: 3px solid black;
+            border-style: dashed;
+            background-color: rgba(128, 128, 0, 0.333);
+            color: black;
+            font-weight: bolder;
+
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+        }
+
+        .product {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 상품 내용이 나올 공간 -->
+    <div id="container">
+        <h1>찜한 상품</h1>
+        <h2> 구매하실 제품을 장바구니에 추가 해주세요.</h2>
+        <section class="product">
+            <div id="pdt">
+                <img src="/images/Reebok x JJJJound Club C White Olive.webp" alt="">
+                <h3> Reebok x JJJJound Club C White Olive </h3>
+                <button class="addItem"> 장바구니에 추가하기 </button>
+            </div>
+            <div id="pdt">
+                <img src="/images/Supreme x Thrasher Hooded Sweatshirt Ash Grey - 21FW.webp" alt="">
+                <h3> Supreme x Thrasher Hooded Sweatshirt Ash Grey - 21FW </h3>
+                <button class="addItem"> 장바구니에 추가하기 </button>
+            </div>
+            <div id="pdt">
+                <img src="/images/Supreme Featherweight Down Puffer Jacket Olive - 23FW.webp" alt="">
+                <h3> Supreme Featherweight Down Puffer Jacket Olive - 23FW </h3>
+                <button class="addItem"> 장바구니에 추가하기 </button>
+            </div>
+        </section>
+        <p>코딩만 따라 해도 웹페이지가 만들어지는</p>
+        <p> 반병헌 코딩 왕초보도 OK! 기초부터 활용까지 완전정복</p>
+        <button id="addItem"> 장바구니에 추가하기 </button>
+    </div>
+    <!-- 장바구니 영역 -->
+    <div id="shoppingList"> 장바구니 영역 </div>
+
+    <script>
+        const addItemButtons = document.querySelectorAll(".addItem"); // 장바구니 추가 버튼
+
+        const shoppingList = document.querySelector("#shoppingList"); // 장바구니 영역
+        // const titles = document.querySelectorAll("#pdt h3"); // pdt 안에 있는 h3 (모든 제품 명)
+
+        addItemButtons.forEach((addItemButton) => {
+            addItemButton.addEventListener('click', (e) => {
+                let newP = document.createElement('p');
+                let itemName = document.createTextNode(e.target.previousElementSibling.innerText).textContent;
+                newP.textContent = itemName
+
+                shoppingList.appendChild(newP)
+            })
+        })
+
+
+        // 꾸미기
+        newP.style.fontSize = "20px";
+        newP.style.color = "brown";
+        /* {once:true} */; // 한번만 눌러지게(addEventListener를 한 번만 실행)
+    </script>
+</body>
+
+</html>

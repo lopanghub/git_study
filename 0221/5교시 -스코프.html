@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스코프(범위)</title>
+</head>
+<body>
+    스코프란? 프로그래밍을 시작했다면 변수와 함수를 사용하게 되는데, 
+    이때 가장 주의해야 할 것이 스코프scope 란 선언한 변수의 적용범위 어느 위치에서
+    변수를 접근 할 수 있는지를 가르킨다. 지역스코프와 전역스코프로 나뉜다 변수를
+    특정 영역에서만 사용할 수 있을때 '지역 스코프를 가지고 있다'고 말한다
+    이런 변수를 '지역변수'라고 한다
+
+
+    <script>
+        // function sum(a,b){
+        //     var result = a+b;
+        // }
+        // sum(10,20);
+        // console.log(result)
+        // 지역스코프
+        // result 변수는 sum 함수에서 선언
+        // result 변수는 함수 스코프 를 가지고
+        // 함수 스코프를 벗어나는 순간 result 변수의 스코프는 사라진다
+        // 정의 되지 않았다는 ReferenceError 오류가 난다
+
+        // 전역스코프
+        // 오류부분 주석 처리후에 실행하기 hello 출력
+        let hi = "hello 첫번째"
+
+        function greeting(){
+            console.log(hi)
+        }
+        greeting();
+        // 전역스코프2
+        // 어디서든 수정가능하다
+        // 엉뚱한 결과를 초래할 수 있다
+
+        let hi2 = "hello 두번째"
+        function change(){
+            hi2="bye"
+        }
+        console.log(hi2)
+        change()
+        console.log(hi2)
+
+        // 전역스코프3
+        function greeting3(){
+            hi3 = "세번째 전역 변수" // 전역변수로 인식
+        }
+        greeting3();
+        console.log(hi3)
+    </script>
+</body>
+</html>

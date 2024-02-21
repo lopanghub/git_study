@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #wrap {
+            width: 400px;
+            height: 400px;
+            border: 1px solid;
+            padding: 50px;
+            margin: 100px auto;
+        }
+
+        #wrap article {
+            background-color: orange;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+        }
+
+        /* wrap에 on클래스 추가 */
+        #wrap.on {
+            background-color: hotpink;
+        }
+
+        #wrap.on article {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="wrap">
+        <article>클릭!</article>
+        <!-- 특정 클래스가 있는지 확인하는 contains() 함수
+        클래스명이 있는지 확인후 없다면 만들고 있으면 없앨때 -->
+    </section>
+
+    <script>
+        let $wrap = document.querySelector('#wrap');
+        $wrap.addEventListener('click', () => {
+            let isOn = $wrap.classList.contains('on')
+            console.log(isOn)
+            // if (isOn) {
+            //     $wrap.classList.remove('on')
+            // } else {
+            //     $wrap.classList.add('on')
+            // }
+            // if - else 대신에 삼항 연산자로 줄여 쓸 수 있다
+            
+            isOn ? $wrap.classList.remove('on') : $wrap.classList.add('on');
+
+            // $wrap.classList.toggle('on')
+
+            // classList.contains() 는 특정 클래스가 선택요소에 있으면 true
+            // 없으면 false를 반환해주는 자바스크립트의 내장 기능이다
+        })
+    </script>
+</body>
+
+</html>
