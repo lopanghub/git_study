@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 슬라이드</title>
+</head>
+
+<body>
+    <h1>다른 이미지를 보려면 좌우 화살표를 눌러 보세요</h1>
+    <div class="container">
+        <img src="../images/sec1.jpg" alt="" id="sec1">
+        <button id="btnPrev">
+            < </button>
+                <button id="btnNext">></button>
+
+    </div>
+
+    <script>
+        let array = ["sec1.jpg", "sec2.jpg", "sec3.jpg", "sec4.jpg"];
+        let btnNext = document.getElementById('btnNext');
+        let btnPrev = document.getElementById('btnPrev');
+
+        let cnt = 0;
+        btnNext.onclick = () => changeImage(1);
+        btnPrev.onclick = () => changeImage(-1);
+
+        function changeImage(dir) {
+            cnt = (cnt + dir + array.length) % array.length
+            document.getElementById('sec1').src = "../images/" + array[cnt];
+        }
+
+        window.onload = () => changeImage(0);
+ 
+    </script>
+</body>
+
+</html>

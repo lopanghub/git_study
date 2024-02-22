@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1교시 회원가입</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1>회원가입</h1>
+        <form action="#" id="register">
+            <ul id="user-info">
+                <li>
+                    <label for="user-id">아이디</label>
+                    <input type="text" id="user-id" placeholder="4~15자리의 영문과 숫자로 입력" required>
+                </li>
+                <li>
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" required>
+                </li>
+                <li>
+                    <label for="uwer-pw">비밀번호</label>
+                    <input type="password" id="user-pw1" placeholder="8자리 이상" required>
+                </li>
+                <li>
+                    <label for="user-pw2">비밀번호 확인</label>
+                    <input type="password" id="user-pw2" required>
+                </li>
+                <li>
+                    <label for="">메일링 수신</label>
+                    <input type="radio" value="yes" name="mailing">예
+                    <input type="radio" value="no" name="mailing">아니오
+                </li>
+            </ul>
+            <ul id="buttons">
+                <li>
+                    <button type="submit">가입하기</button>
+                </li>
+                <li>
+                    <button type="reset">취소</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+
+    <script>
+        //아이디 체크
+        //비밀번호 자리수
+        //비밀번호 비교
+
+        //아이디 필드를 가져와서 변수에 저장
+        let userId = document.getElementById('user-id')
+        //비밀번호 필드 가져와서 변수에 저장
+        let pw1 = document.getElementById('user-pw1')
+        let pw2 = document.getElementById('user-pw2')
+
+        // 아이디 자리수
+        userId.onchange = checkID;
+        pw1.onchange = checkPw;
+        pw2.onchange = comparePw;
+        //아이디 if 사용해서 4~15자리
+        function checkID() {
+            if (userId.value.length < 4 || userId.value.length > 15) {
+                alert('4~15자리의 영문과 숫자를 사용하세요'); // 오류메시지 출력
+                userId.select(); //다시 입력 할 수 있도록 userId 필드 선택해놓음
+            }
+        }
+        // 비밀번호가 8자리 이상인지 오류메시지 출력
+        function checkPw() {
+            if (pw1.value.length < 8) {
+                alert('8자리 이상의 수를 입력하시오');
+            } else if ((pw1.value.match(/[!@#$%^&*(),.?":{}|<>]/g) || []).length < 2) {
+                alert('비밀번호에는 특수 문자가 두 개 이상 포함되어야 합니다.');
+            }
+        }
+        // 비밀번호 확인
+        function comparePw() {
+            if (pw1.value !== pw2.value) {
+                alert('비밀번호가 다릅니다')
+                pw2.value = ""; //비밀번호 필드를 지워줌
+                pw2.focus();//
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

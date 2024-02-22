@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>총 주문가격</title>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>기본 가격</legend>
+            <p>30,000원</p>
+        </fieldset>
+        <fieldset>
+            <legend>추가 주문</legend>
+            <!-- 체크박스 value에 각각의 가격 값을 입력해준다 -->
+            <!-- 모든 체크박스는 클래스 이름 같게 .checkbx -->
+            <label for=""><input type="checkbox" class="checkbx" value="1200">기장 추가(1200원)</label>
+            <label for=""><input type="checkbox" class="checkbx" value="3000">배송비(3000원)</label>
+            <label for=""><input type="checkbox" class="checkbx" value="4000">양말 (2개, 4000원)</label>
+            <label for=""><input type="checkbox" class="checkbx" value="1000">포장 추가(1000원)</label>
+        </fieldset>
+        <!-- 결과 합계 가격을 나타낼 곳 -->
+        <fieldset>
+            <legend>합계</legend>
+            <input type="text" id="total" name="total" class="price" readonly>
+        </fieldset>
+    </form>
+
+
+    <script>
+        let price = 30000; // 기본가 3만원 대입
+        // 모든 체크박스 가져오기
+        // total 합계 가격 부분 변수로 가져오기
+        let checkBoxs = document.querySelectorAll('.checkbx');
+        let total = document.getElementById('total');
+        total.value = price + '원';
+
+        for (i = 0; i < checkBoxs.length; i++) {
+            checkBoxs[i].onclick = function update() {
+                if (this.checked == true) {
+                    // 합계 가격에 합산하기 +=
+                    price += parseInt(this.value); // 정수로 표현
+                } else {
+                    price -= parseInt(this.value);
+                }
+                total.value = price + '원';
+            }
+            
+        }
+        
+
+    </script>
+</body>
+
+</html>
