@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Example</title>
+<style>
+    body {
+        border: 5px solid green;
+    }
+
+    div {
+        border: 5px solid red;
+    }
+
+    p {
+        border: 5px solid blue
+    }
+</style>
+</head>
+
+<body>
+    body
+    <div>
+        div
+        <p>p</p>
+    </div>
+    <script>
+        const $p = document.querySelector('p')
+        const $div = document.querySelector('div')
+        const $body = document.querySelector('body')
+
+        function Alert(message) {
+            return function () {
+                alert(message)
+            }
+        }
+
+        // $p.addEventListener('click', Alert('p tag event'))
+        // $div.addEventListener('click', Alert('div tag event'))
+        // $body.addEventListener('click', Alert('body tag event'))
+
+        const elements = document.querySelectorAll('*')
+
+        for (let elem of elements) {
+            elem.addEventListener('click', e => alert(`캡쳐링: ${elem.tagName}`), true)
+        }
+    </script>
+</body>
+
+</html>

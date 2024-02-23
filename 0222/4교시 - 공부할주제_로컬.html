@@ -74,6 +74,7 @@
             list += "</ul>" // 목록을 끝내는 부분
 
             document.querySelector('#itemList').innerHTML = list; //list 내용 표시
+            
             let remove = document.querySelectorAll('.close');//삭제버튼
             for (let i = 0; i < remove.length; i++) {
                 remove[i].addEventListener('click', removeList);//해당요소 클릭시 removeList 실행

@@ -22,13 +22,13 @@
         let btnNext = document.getElementById('btnNext');
         let btnPrev = document.getElementById('btnPrev');
 
-        let cnt = 0;
+        let i = 0;
         btnNext.onclick = () => changeImage(1);
         btnPrev.onclick = () => changeImage(-1);
 
         function changeImage(dir) {
-            cnt = (cnt + dir + array.length) % array.length
-            document.getElementById('sec1').src = "../images/" + array[cnt];
+            i = (i + dir + array.length) % array.length
+            document.getElementById('sec1').src = "../images/" + array[i];
         }
 
         window.onload = () => changeImage(0);

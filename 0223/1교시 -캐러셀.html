@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐러셀</title>
+    <style>
+        #container {
+            width: 600px;
+            height: 300px;
+            border: 2px solid seagreen;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-size: cover; /* Cover the entire area */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+        }
+
+
+        .arrow {
+            z-index: 5;
+            font-size: 2em;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>다른 이미지를 보려면 좌우 화살표를 눌러보시오</h3>
+    <div id="container">
+        <!-- 유니코드 엔티티코드 -->
+        <div class="arrow" id="left"> &larr; </div>
+        <div class="arrow" id="right"> &rarr; </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('container')
+        const pics = ["sec1.jpg", "sec2.jpg", "sec3.jpg", "sec4.jpg"];
+
+        container.style.backgroundImage = `url(../images/${pics[0]})`;//첫번째 이미지
+        
+        const arrows = document.querySelectorAll('.arrow')
+
+        let i = 0; //배열 인덱스
+        arrows.forEach(arrow => {
+            arrow.addEventListener('click', function (e) {
+                if (e.target.id == "left") {
+                    i--; // 이전 이미지로 이동
+                    if (i < 0) {
+                        i = pics.length - 1;//맨 마지막 이미지로 이동
+                    }
+                } else if (e.target.id == "right") {
+                    i++;
+                    i %= pics.length
+                }
+                container.style.backgroundImage = `url(../images/${pics[i]})`;
+            })
+
+        })
+    </script>
+</body>
+
+</html>

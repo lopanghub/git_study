@@ -50,6 +50,7 @@
             showList();
         }
 
+
         // 보여주는 기능 
         // 한개의 기능에 한개의 함수로
         function showList() {
@@ -60,7 +61,7 @@
                 // 요소와 삭제버튼은 <li>~</li>로 묶음
             }
             list += "</ul>" // 목록을 끝내는 부분
-
+            document.querySelector('#itemList').innerHTML = list;
         }
 
         document.querySelector('#itemList').addEventListener('click', function (e) {
@@ -71,6 +72,13 @@
                 showList();
             }
         })
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>캐러셀</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .carousel_wrap {
+            position: relative;
+            width: 640px;
+            height: 380px;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            flex-direction: row;
+            transition: 0.5s ease-in-out;
+            width: 2560px;
+
+        }
+
+        .carousel_item {
+            width: 640px;
+            height: 360px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        button {
+            position: absolute;
+            /* position 속성 추가 */
+            top: 50%;
+            /* 버튼을 캐러셀 중앙 높이로 이동 */
+            transform: translateY(-50%);
+            /* 버튼을 정확히 중앙에 위치시키기 위해 */
+            background-color: #fff;
+            /* 버튼 배경색 추가 */
+            border: 1px solid #000;
+            /* 버튼 테두리 추가 */
+            cursor: pointer;
+            /* 마우스 오버 시 커서 변경 */
+        }
+
+        .prev {
+            left: 10px;
+            /* 왼쪽 버튼 위치 조정 */
+        }
+
+        .next {
+            right: 10px;
+            /* 오른쪽 버튼 위치 조정 */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel_wrap">
+        <div class="carousel">
+            <div class="carousel_item" style="background-image: url('../images/sec1.jpg');"></div>
+            <div class="carousel_item" style="background-image: url('../images/sec2.jpg');"></div>
+            <div class="carousel_item" style="background-image: url('../images/sec3.jpg');"></div>
+            <div class="carousel_item" style="background-image: url('../images/sec4.jpg');"></div>
+        </div>
+        <button type="button" class="prev">prev</button>
+        <button type="button" class="next">next</button>
+    </div>
+    <!-- <button type="button" class="prev">prev</button>
+      <button type="button" class="next">next</button> -->
+
+    <script>
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        const carousel = document.querySelector('.carousel');
+
+        let index = 0;
+
+        prevButton.addEventListener('click', () => {
+            index -= 1;
+            if (index < 0) {
+            index = 3;
+            }
+            carousel.style.transform = `translateX(-${640 * index}px)`;
+        })
+
+        nextButton.addEventListener('click', () => {
+            index += 1;
+            if (index > 3) {
+            index = 0;
+            }
+            carousel.style.transform = `translateX(-${640 * index}px)`;
+        })
+    </script>
+</body>
+
+</html>

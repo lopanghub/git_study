@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user_json</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100&display=swap" rel="stylesheet">
+
+    <style>
+        body,
+        html {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        #result {
+
+            text-align: center;
+        }
+
+        #result>div {
+            color: white;
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        .author {
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 100 !important;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="result">
+        <div class="quote"></div>
+        <div class="author"></div>
+    </div>
+
+    <script>
+        fetch("http://dummyjson.com/quotes")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                let quotes = data.quotes
+                let radomQuotesIndex = Math.floor(Math.random() * quotes.length);
+                let randomQuote = quotes[radomQuotesIndex];
+                console.log(randomQuote)
+
+                const quoteElement = document.querySelector('.quote');
+                let quoteString = `"${randomQuote.quote}"`;
+                quoteElement.innerHTML = quoteString
+
+                const authorElement = document.querySelector('.author')
+                let authorString = `-${randomQuote.author}-`
+                authorElement.innerHTML = authorString
+            })
+
+
+
+
+    </script>
+</body>
+
+</html>

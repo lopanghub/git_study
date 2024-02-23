@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student2</title>
+</head>
+
+<body>
+    <section>
+        <h3>수강생 명단</h3>
+        <div id="result"></div>
+    </section>
+
+    <script>
+        // fetch이용 JSON자료 가져오기
+        // if문 따로 없다. 받아오면 then()함수 연결
+        fetch('2교시 - student.json') //json파일 받기
+            .then(response => response.json()) //응답 => json파일을 객체로 변환
+            .then(json => { // 객체를 출력
+                let output = "";
+                json.forEach(student => {
+                    output += `
+                    <h2>${student.name}</h2>
+                        <ul>
+                            <li> 전공 : ${student.major}</li>
+                            <li> 학년 : ${student.grade}</li>
+                        </ul>`
+                })
+                document.getElementById('result').innerHTML = output;
+            })
+    </script>
+</body>
+
+</html>

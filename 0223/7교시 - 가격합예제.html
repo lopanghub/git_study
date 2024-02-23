@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantity and Price Calculator</title>
+<style>
+    .container {
+        margin: 50px auto;
+        text-align: center;
+        width: 300px;
+        border: solid 1px;
+    }
+    h2 {
+        cursor: pointer;
+        color: hotpink;
+        background-color: pink;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2 id="title"> 상품의 이름 </h2>
+    <label for="quantity">수량:</label>
+    <input type="number" id="quantity" min="0" value="0">
+    <br><br>
+    <label for="price">가격:</label>
+    <span id="price">30,000</span> 원 <!-- 가격을 문자열로 표시 -->
+    <!-- <input type="number" id="price" min="0" value="30000"> -->
+    <br><br>
+    <p>합계 가격: <span id="total">0</span></p>
+</div>
+
+<script>
+    const quantityInput = document.getElementById('quantity');
+    const priceSpan = document.getElementById('price');
+    const totalSpan = document.getElementById('total');
+    const title = document.getElementById('title');
+    let quantity = 0; // 초기 수량 값
+    //let price = 30000; // 초기 가격 값
+    let price = parseInt(priceSpan.textContent.replace(',', '')); // 초기 가격 값
+
+    // 수량 및 가격 입력 시 합계 갱신
+    quantityInput.addEventListener('input', updateTotal);
+
+    // 제목 클릭 시 수량 추가
+    title.addEventListener('click', addQuantity);
+
+    function updateTotal() {
+        quantity = parseInt(quantityInput.value); // 입력된 수량
+        let total = quantity * price; // 합계 계산
+        totalSpan.textContent = total.toLocaleString(); // 화면에 합계 업데이트
+    }
+
+    function addQuantity() {
+        quantity++;
+        quantityInput.value = quantity;
+        updateTotal();
+    }
+</script>
+</body>
+</html>
