@@ -16,7 +16,7 @@ public class SpringFormat02 {
 		
 		String str4 = String.format("%-6d_", 100);
 		System.out.println(str4);
-		
+		//100   _ 
 	}
 	
 }
