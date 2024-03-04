@@ -22,6 +22,9 @@ public class Test01 {
 			 //b 답:d
 		// 9. 다음 코드의 실행 결과는? //b
 		
+		char a, b;
+		System.out.println('A'+'a');
+		
 	}
 
 }

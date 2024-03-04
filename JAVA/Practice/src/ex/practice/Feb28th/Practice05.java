@@ -18,10 +18,10 @@ public class Practice05 {
 		System.out.println(i); //지역 변수는 선언된 블럭 내에서만 사용할 수 있다.
 		System.out.println(x);
 		
-		System.out.println(str);
+		
 	}
 	
 	public static void method(){
-		System.out.println(str);
+	
 	}
 }
