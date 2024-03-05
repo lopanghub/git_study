@@ -1,4 +1,4 @@
-package ex.text.ch05;
+package ex.test.ch05;
 
 public class Ex01 {
 

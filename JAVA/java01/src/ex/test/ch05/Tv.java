@@ -1,4 +1,4 @@
-package ex.text.ch05;
+package ex.test.ch05;
 
 public class Tv {
 	// 속성 = 필드 = 변수
