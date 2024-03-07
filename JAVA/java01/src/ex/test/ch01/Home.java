@@ -4,7 +4,7 @@ public class Home {
 	String address;
 	int size = 50;
 	
-	private Home() {
+	public Home() {
 		
 	}
 }
