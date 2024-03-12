@@ -1,0 +1,9 @@
+java.lang.ArithmeticException: / by zero
+	at Practice/ex.practice.Mar12th.ExceptionEx13.main(ExceptionEx13.java:19)
+예외 메시지 : / by zero
+-----------------------------------
+예외발생시간 : Tue Mar 12 16:25:38 KST 2024
+java.lang.ArithmeticException: / by zero
+	at Practice/ex.practice.Mar12th.ExceptionEx14.main(ExceptionEx14.java:18)
+예외메시지 : / by zero
+-----------------------------------

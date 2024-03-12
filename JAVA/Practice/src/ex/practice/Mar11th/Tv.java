@@ -1,9 +1,9 @@
 package ex.practice.Mar11th;
 
 public class Tv {
-	static boolean power;
+	
 	static int [] chValue = new int[10];
-	static {
+	static { //정적 초기화 블럭
 		for (int i =0; i <chValue.length; i++) {
 			chValue[i] = (int)(Math.random()*30)+1;
 			//1번 중복 값 처리 
@@ -33,7 +33,7 @@ public class Tv {
 		}
 		
 	}
-	
+	boolean power;
 	int channel;
 	int currentChannelIndex;
 	
@@ -45,7 +45,7 @@ public class Tv {
 		this.channel=ch;
 	}
 	
-	static void powerChange() {
+	void powerChange() {
 		power = !power;
 	}
 	
