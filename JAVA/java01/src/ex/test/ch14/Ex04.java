@@ -16,5 +16,7 @@ public class Ex04 {
 		list2.add(b);
 		list2.add(new C());
 		System.out.println(list2);
+		
+		list2.get(1);
 	}
 }
