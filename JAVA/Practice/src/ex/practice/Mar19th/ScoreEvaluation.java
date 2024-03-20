@@ -71,11 +71,39 @@ public class ScoreEvaluation {
 		}
 	}
 
+	static void deleteRecord() {
+		while(true) {
+			displayRecord();
+			System.out.println("삭제하고자 하는 데이터의 학번을 입력하세요(q:메인화면)");
+			System.out.println(">>");
+		}
+	}
+	
+	static void displayRecord() {
+		int koreanTotal =0;
+		int englishTotal =0;
+		int mathTotal=0;
+		int total=0;
+		
+		System.out.println();
+		System.out.println("이름 번호 국어 영어 수학 총점 ");
+		System.out.println("=================================");
+		
+		int length = record.size();
+		
+		if (length>0) {
+			
+		}
+	}
+	
 	public static void main(String[] args) {
 		while (true) {
 			switch (displayMenu()) {
 			case 1:
 				inputRecord(); // 성적 입력
+				break;
+			case 2:
+				deleteRecord();
 				break;
 
 			}
