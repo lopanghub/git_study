@@ -1,254 +1,188 @@
-select add_months('2012/01/01',1) from dual;    
+//계정의 전체 테이블 목록 검색
+select * from tab;
 
-SELECT months_between (sysdate, hiredate),trunc(months_between (sysdate, hiredate)) as month from emp;
-
-select next_day(next_day(sysdate, '월요일'), '월요일') from dual;
-select next_day(sysdate, '수요일') from dual;
-
-SELECT last_day(sysdate) from dual;
-
-select sysdate, sysdate+8 from dual;
-SELECT to_char(sysdate)+8 from dual;
-select to_date('24/03/26')+8 from duaL;
-select to_number('ABCD')+100 from dual;
-
-SELECT to_char(sysdate, 'YYYY/MM/DD HH:MI:SS') from dual;
-
-select to_date('0207', 'MM/YY') from dual;
-
-select comm, nvl(comm,0) from emp;
-select sum(comm) from emp;
-select sal,comm, sal+nvl(comm,0) as 총급여 from emp;
-
-select comm, nvl2(comm, 'o' ,'x') from emp;
-//연봉 계산 sal 월급 comm 보너스
-// sal *12, sal*12+comm
-
-select sal as 월급 , 
-        nvl(comm,0) as 보너스 ,
-        nvl2(comm, sal*12+comm, sal*12) as 연봉
-        from emp; 
-        
-select distinct job from emp;                
-select decode(job, 
-            'MANAGER', sal*1.1,
-            'SALESMAN', sal*1.2,
-            'ANALYST', sal*1.3) as upsal from emp;        
-            
-select case job
-            when 'MANAGER' then sal*1.1
-            when 'SALESMAN' then sal*1.2
-            when 'ANALYST' then sal*1.3
-            else sal
-        end as upsal from emp;    
-        
-select case
-            when comm is null then '해당사항 없음'
-            when comm = 0 then '보너스 없음'
-            when comm > 0 then '보너스 '|| sal*1.1 // || 연결문자 자바의 +
-        end as comm
-        from emp;
-        
-select sal from emp;        
-select sum(sal) from emp;
-select sum(sal), max(sal), min(sal), count(*) from emp;
-select count(comm) from emp;
-select sum(sal) from emp where deptno=10;
-
-
-select deptno, count(*) from emp group by deptno;
-//부서번호당 몇명있는지
-select deptno, 
-    count(*), sum(sal), max(sal),min(sal),trunc(avg(sal))
-    from emp group by deptno
-    order by deptno;
-    
-select deptno, trunc(avg(sal)) from emp
-    group by deptno having avg(sal)>= 2000;
-    
-select job, count(*) from emp group by job;
-
-
-// 전체 월급 5000 초과하는 job, 단 salesman 제외
-select job, sum(sal) as 급여합 from emp 
-where job !='SALESMAN'
-group by job having sum(sal)>5000
-order by sum(sal) desc;
+//테이블 구조 확인
+desc emp;
 
 select * from emp;
 
-select deptno, job, count(*) from emp 
-    group by deptno, job order by deptno;
-    //부서별로 묶고 다시 하위에서 직업별로 묶기
+//테이블 생성
+create table member(
+    id varchar2(50) primary key,
+    pw varchar2(50) not null,
+    birth date,
+    age number default 1,
+    name varchar2(50),
+    reg date default sysdate
+);
+
+commit;
 
 
-select * from emp;
 
-//1번 부서번호가 10번인부서의사람중사원번호, 이름, 급여를출력하라.
+select * from member;
 
-select deptno, empno, ename, sal  from emp where deptno=10;
+// 데이터 추가 - insert
 
-//2번 사원번호가 7639인사람중이름, 입사일자, 부서번호를출력하라.
-select empno, ename, hiredate, deptno from emp where empno=7698;
+insert into member values('java', '0000', '90/01/05', 24, 'oracle', sysdate);
+insert into member values('html', '1234', '91/11/23', 23, 'www', sysdate);
+insert into member values('test', '0004', '93/05/06', 21, NULL, sysdate);
 
-//3번 이름이 ALLEN인사람의모든정보를출력하라.
+insert into member(id, pw) values('kor', '134');
+insert into member(id, pw, name) values('gildong', '134', 'home');
 
-select * from emp where ename='ALLEN';
-
-//4번 입사일자가 83/01/12인사원의이름, 부서번호, 급여를출력하라.
-select ename, deptno, sal, hiredate 
-    from emp where hiredate = to_date('1981/11/17','YYYY/MM/DD');
+//3 수정 - UPDATE
     
+update member set pw = '0000';
+update member set pw = '1234', name='guest', age=20;
 
-//5번 직업이 MANAGER가아닌사람의모든정보를출력하라.
-select * from emp where job != 'MANAGER';
+update member set pw = '000' where id = 'java';
+update member set pw ='111111' where id = 'jaaaavaa';
 
-//6번  입사일자가 81/04/02 이후에입사한사원의정보를출력하라.
-select * from emp where hiredate > '81/04/02';
+update member set pw='1212' where age >30;
 
-//7번 급여가 $800이상인사람의이름, 급여, 부서번호를출력하라.
-select ename, sal, deptno from emp where sal>=800;
+//4 삭제
+delete from member;
 
-//<<8>>  부서번호가 20번이상인사원의모든정보를출력하라.
-select * from emp where deptno>=20;
+delete from member where name is null;
+
+//롤백
+select * from member;
+commit;
+delete from member;
+rollback;
+
+//1 테이블 정보변경 alter
+drop table member;
+
+//2 테이블 생성
+create table test(
+    num number primary key,
+    name varchar2(50),
+    reg date default sysdate
+);    
+// 추가
+alter table test add(age number default 1);
+
+desc test;
+
+alter table emp add( age number default 1);
+alter table emp add(pw varchar2(100) not null);
+alter table test add(pw varchar2(100) not null);
+
+select * from test;
+
+alter table test rename column name to nick;
+
+alter table test drop column pw;
+desc test;
+
+alter table emp drop column age;
+alter table emp drop column pw;
+
+desc emp;
 
 
-//9번 성명이 K로시작하는사람보다높은이름을가진사람의모든정보를출력하라. 
-select * from emp where ename > 'L%';
+select * from dictionary;
+select * from dict;
 
-//<<10>>  입사일자가 81/12/09 보다먼저입사한사람들의모든정보를출력하라.
-select * from emp where hiredate < to_date('1981/12/09', 'YYYY/MM/DD');
+select * from tab;
+select table_name from user_tables;
 
-//<<11>>  입사번호가 7698 보다작거나같은사람들의입사번호와이름을출력하라.
-select empno, ename from emp where empno <=7698;
-
-//<<12>>  입사일자가 81/04/02 보다늦고 82/12/09 보다빠른사원의이름, 월급, 부서번호를출력하라.
-select ename, sal, deptno, hiredate from emp where hiredate > '81/04/02' and hiredate <'82/12/09';
-
-//<<13>>  급여가 1,600 보다크고 $3,000보다작은사람은이름, 직무, 급여를출력하라.
-select ename, job, sal from emp where sal between 1600 and 3000;
-
-//<<14>>  사원번호가 7654와 7782 사이이외의사원의모든정보를출력하라.
-select * from emp where not (empno between 7654 and 7782);
-
-//<<15>>이름이 B와 J 사이의모든사원의정보를출력하라.
-select * from emp where ename >= 'B%' and ename<='J%';
-
-//<<16>>  입사일자가 81년이외에입사한사람의모든정보를출력하라.
-select * from emp where not (to_char(hiredate) like '81%');
-
-//<<17>>  직무가 MANAGER와 SALESMAN인사람의모든정보를출력하라.
-select * from emp where job = 'MANAGER' or job= 'SALESMAN';
-
-//<<18>>  부서번호와 20,30번을제외한모든사람의이름, 사원번호, 부서번호를출력하라.
-select ename, empno, deptno from emp where deptno not in(20,30);
-
-//<<19>>  이름이 S로시작하는사원의사원번호, 이름, 입사일자, 부서번호를출력하라.
-select ename, hiredate, deptno from emp where ename like 'S%';
+select * from dba_tables;
+select * from all_users;
+select * from dba_users;
 
 
+select * from emp where empno=7900;
+select * from user_indexes;
+select * from user_ind_columns;
+select index_name, table_name, column_name from user_ind_columns;
 
-//20번 입사일자가 81년도인사람의모든정보를출력하라.
-select * from emp where hiredate > '80/12/31' and hiredate<'82/01/01';
+select * from emp where empno=7000; //인덱스 설정된 쪽이 훨씬 빠르다
+select * from emp where sal = 3000;
 
-select * from emp
-    where to_char(hiredate) like '81%';
+create index idx_emp_sal on emp(sal);
+
+drop index idx_emp_sal;
+
+select empno, job, sal, deptno from emp;
+
+//10번 부서에서 급여가 가장 많은 직원 사원번호 직업 급여를 출력
+select empno, job, sal from emp where deptno=10 
+    and sal=(select max(sal) from emp where deptno =10);
     
+//10번 부서에서 사원번호 7839의 사원번호, 직업, 급여를 출력하시오
+select empno, job, sal from emp where deptno=10 and empno=7839;
 
-//<<21>>  이름중 S자가들어가있는사람만모든정보를출력하라.
-select * from emp where REGEXP_LIKE(ename, 'S+');
-
-//<<22>>  이름이 S로시작하고마지막글자가 T인사람의모든정보를출력하라 (단, 이름은전체 5자리이다.>>
-select * from emp where ename like 'S___T';
-
-//<<23>>  첫번째문자는관계없고두번째문자가 A인사람의정보를출력하라.
-select * from emp where ename like '_A%';
-
-//<<24>>  커미션이 NULL인사람의정보를출력하라.
-select * from emp where comm is null;
-
-//<<25>>  커미션이 NULL이아닌사람의모든정보를출력하라.
-select * from emp where comm is not null;
-
-//<<26>>  부서가 30번부서이고급여가 $1,500 이상인사람의이름, 부서, 월급을출력하라.
-select ename, deptno, sal from emp where deptno = 30 and sal>=1500;
-
-//<<27>>  이름의첫글자가 K로시작하거나부서번호가 30인사람의사원번호, 이름, 부서번호를출력하라.
-select empno, ename, deptno from emp where ename like 'K%' or deptno =30;
-
-//<<28>>  급여가 $1,500이상이고부서번호가 30번인사워중직업이 MANAGER인사람의정보를출력하라.
-select * from emp where sal >= 1500 and deptno=30 and job = 'MANAGER';
-
-//<<29>>  부서번호가 30인사람중사원번호를 SORT 하라.
-select * from emp where deptno=30 order by empno;
-
-//<<30>>  급여가많은순으로 정렬 하라.
-select * from emp order by sal desc;
-
+//자주 사용되는 검색문을 하나씩 쓰기보단 뷰로 저장 
+create view vm_emp10
+    as (select empno, job, sal from emp where deptno=10);
     
-//31번 부서번호로 정렬 한후 급여가많은사람순으로출력하라.
-select * from emp
-    order by deptno, sal desc;
+//위의 코드를 뷰로 출력
+select * from vm_emp10 where empno = 7839;
+
+//생성된 뷰를 확인
+select * from user_views;
+
+drop view vm_emp10;
+
+//rownum이 뒤죽박죽으로 나온다
+select rownum, empno, ename, job, sal from emp order by sal;
+
+// *은 단독으로 써야된다(에러)
+select *, rownum from 
+    (select rownum, empno, ename, job, sal from emp order by sal);
     
-//<<32>>  부서번호로 내림차순 정렬 하고이름순으로 오름차순, 급여순으로 내림차순 정렬하라.    
-select * from emp order by deptno desc, ename, sal desc;
+select e.*, rownum from 
+    (select  empno, ename, job, sal from emp  order by sal) e;    
+    
+//1~5
+select * from 
+    (select e.*, rownum as rn from
+        (select empno, ename, job, sal from emp order by sal) e)
+        where rn>=1 and rn <=5;
+        
+//이렇게 쓰는 이유 로우넘을 직접적으로 쓰면 중복으로 사용되기 때문에 서브쿼리로 처리        
 
+//시퀀스
+create sequence test_seq;
 
-select upper(ename), lower(ename), initcap(ename) from emp;
-select * from emp where upper(ename) = upper('scott');
-select * from emp where upper(ename) like upper ('%s%');
+drop table test;
+create table test(
+    num number primary key,
+    name varchar2(50)
+);
 
-select ename, length(ename) from emp;
-select ename, sal, deptno from emp where length(ename)=4;
+insert into test values(test_seq.nextval,'java');
+insert into test values(test_seq.nextval,'java');
+insert into test values(test_seq.nextval,'java');
+insert into test values(test_seq.nextval,'java');
 
-select length('한글'), lengthb('한글') from dual;
+select * from test;
 
-select job, substr(job,1,3) from emp;// 인덱스 1번부터 시작
-select job, substr(job,3,2) from emp;
-select job, substr(job,3) from emp;
+delete from test;
 
-select job, substr(job,-1) from emp;
-select job, substr(job,-3) from emp;
-select job, substr(job,-3,2) from emp;
+select * from seq;
 
-select instr('hello, oracle' , 'l' , 5) from dual;
-select instr('hello, oracle', 'l',1,2) from dual;
+//시퀀스 옵션 
+create sequence test1_seq
+    start with 10
+    increment by 2
+    maxvalue 100 
+    minvalue 1 
+    cycle 
+    nocache
+    ;
+    
+select * from seq;
 
-select replace('010-1234-0000','-',' ') from dual;
-select job, replace(job,'M','-') from emp;
+insert into test values(test1_seq.nextval, 'java01');
+select * from test ;
 
-select lpad ('oracle',10) from dual;
-select rpad ('oracle',10,'*') from dual;
-select lpad ('oracle',10,'*') from dual;
-select rpad('930101-1',14,'*') from dual;
+create sequence 시퀀스명 nocache;
 
-select concat(ename, job) from emp;
-select concat(empno, ename) from emp;
-select ename||'_'||job from emp;
-
-select trim ('     korea     ') from dual;
-select ltrim('<korea>','<') from dual;
-
-select round(1234.5678) from dual;
-select round(1234.5678,0) from dual;
-select round(1234.5678,1) from dual;
-select round(1234.5678,2) from dual;
-
-select ceil(1234.5678) from dual; //올림
-
-select trunc(1234.5678) from dual;
-select trunc(1234.5678,1) from dual;
-select trunc(1234.5678,2) from dual;
-
-select sal, trunc(sal/12) from emp;
-
-select trunc(-3.14) from dual;
-
-select floor (-3.14)from dual;
-//소수점 아래 자리 버리고 정수부분을 다음 음수로 변환
-
-select mod(15,6) from dual;
-select mod(15,5) from dual;
-
-select sysdate from dual;
-select sysdate , sysdate-1, sysdate+8 from dual;
+//현재 시퀀스 값 확인
+select test_seq.currval from dual;
+select test1_seq.currval from dual;
+    
