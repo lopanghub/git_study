@@ -36,7 +36,7 @@ public class TcpIpMultichatClient {
 		
 		
 		try {
-			String serverIp = "192.168.0.56";
+			String serverIp = "192.168.0.28";
 			// 소켓을 생성하여 연결을 요청한다.
 			Socket socket = new Socket(serverIp, 7777);
 			System.out.println("서버에 연결되었습니다.");
@@ -104,8 +104,8 @@ public class TcpIpMultichatClient {
 			this.socket = socket;
 			try {
 				in = new DataInputStream(socket.getInputStream());
-				blockList = new ArrayList<>();
-				blockList.add("이현학");
+//				blockList = new ArrayList<>();
+//				blockList.add("");
 				
 			} catch (IOException e) {
 			}
@@ -122,11 +122,11 @@ public class TcpIpMultichatClient {
 //						msg = "차단된 유저 입니다.";
 //					}
 //					System.out.println(msg);// 대화 내용 출력
-					int x = msg.indexOf("]");
-					String nick = msg.substring(1, x); //1이상 x미만
-					if(blockList.contains(nick)) {
-						msg = "차단된 유저입니다.";
-					}
+//					int x = msg.indexOf("]");
+//					String nick = msg.substring(1, x); //1이상 x미만
+//					if(blockList.contains(nick)) {
+//						msg = "차단된 유저입니다.";
+//					}
 					
 					msg += "\n";
 					byte[] b = msg.getBytes();

@@ -99,7 +99,7 @@ public class TcpIpMultichatServer {
 			}
 
 		} // while
-
+		
 	} // sendToAll
 
 	public static void main(String args[]) {
