@@ -1,0 +1,38 @@
+package com.jspstudy.ch02.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Calendar;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+//서블릿 클래스 - HttpServlet -2가지 Get방식 Post 방식 요청을 처리하는 메서드가 따로 있다
+@WebServlet("/today")
+public class TodayServlet extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		Calendar today = Calendar.getInstance();
+		PrintWriter out = resp.getWriter();
+		out.println("<html>");
+		out.println("<head><title>현재시간</title></head>");
+		out.println("<body>");
+		out.println("<h1></h1>");
+		out.println("오늘은"+today.get(Calendar.YEAR)+"년");
+		out.println((today.get(Calendar.MONTH)+1)+"월");
+		out.println(today.get(Calendar.DAY_OF_MONTH)+"일 입니다.");
+		out.println("</body>");
+		out.println("</body>");
+		out.println("</html>");
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+	}
+	
+}
