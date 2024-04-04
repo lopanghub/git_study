@@ -1,0 +1,40 @@
+<%@page import="com.jspstudy.ch03.vo.Student"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%
+	
+	
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>학생 정보 - 표현식(Expression)</h2>
+	<%
+    Student student = (Student) request.getAttribute("s1");
+    if(student != null) {
+        // student 객체가 null이 아니면, 여기에 있는 코드가 실행됩니다.
+%>
+        이름: <%= student.getName() %><br>
+        나이: <%= student.getAge() %><br>
+        성별: <%= student.getGender() %><br>
+<%
+    } else {
+        // student 객체가 null이면, 여기에 있는 코드가 실행됩니다.
+%>
+        <p>Student 정보가 없습니다.</p>
+<%
+    }
+%>
+	
+	<h2>학생 정보 - 표현언어(Expression Language)</h2>
+	이름 : ${s2.name }<br>
+	나이 : ${s2.age}<br>
+	성별 : ${s2.gender}<br>
+	
+</body>
+</html>

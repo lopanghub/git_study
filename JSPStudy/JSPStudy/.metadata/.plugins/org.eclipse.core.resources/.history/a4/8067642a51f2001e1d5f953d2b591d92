@@ -1,0 +1,7 @@
+package com.javastudy.test;
+
+public class QueueTest01 {
+	public static void main(String[] args) {
+		
+	}
+}

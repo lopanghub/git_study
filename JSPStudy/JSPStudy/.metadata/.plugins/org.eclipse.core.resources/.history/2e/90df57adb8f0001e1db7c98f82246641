@@ -1,0 +1,5 @@
+package com.jspstudy.ch03.vo;
+
+public class Student {
+
+}

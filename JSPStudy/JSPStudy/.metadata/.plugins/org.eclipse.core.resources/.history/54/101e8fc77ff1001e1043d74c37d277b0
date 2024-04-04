@@ -1,0 +1,31 @@
+<%@page import="com.jspstudy.ch03.vo.Student"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	Student s1 = (Student) request.getAttribute("s1");
+	Student s2 = (Student) request.getAttribute("s2");
+	Student s3 = (Student) request.getAttribute("s3");
+	Student s4 = (Student) request.getAttribute("s4");
+	Student s5 = (Student) request.getAttribute("s5");
+	String result = "";
+%>    
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>학생 정보 - 스크립틀릿과 표현식 사용</h2>
+	<ul>
+		<li><% 
+			for(int i=1 ;i<=5;i++){
+				result = s[i].getName()+"("+s[i].getAge()+") - "+s[i].getGender; %>
+			<%
+			}
+		%>
+		</li>
+	</ul>
+</body>
+</html>

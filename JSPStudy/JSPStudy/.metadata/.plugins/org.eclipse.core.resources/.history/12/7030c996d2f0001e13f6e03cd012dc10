@@ -1,0 +1,7 @@
+package com.jsp.ch02.servlet;
+
+
+@WebServlet("/today")
+public class TodayServlet extends HttpServlet{
+		
+}
