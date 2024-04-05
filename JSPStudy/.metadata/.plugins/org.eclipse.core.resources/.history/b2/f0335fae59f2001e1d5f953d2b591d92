@@ -1,0 +1,49 @@
+package com.javastudy.test;
+
+public class SubClass extends SuperClass {   
+
+    int age;   
+
+    public SubClass(String name, int age) {     
+
+        super(name);     
+
+        this.age = age;   
+
+    }   
+
+    public String toString() {     
+
+        return name + ", " + age;   
+
+    }   
+
+    public static void main(String[] args) {     
+
+        SuperClass s1 = new SubClass("이순신", 20);     
+
+        SuperClass s2 = new SuperClass("홍길동");     
+
+        System.out.println(s1 + " : " + s2);   
+
+    }
+
+}
+//이순신,20 : 홍길동
+class SuperClass {   
+
+    String name;   
+
+    public SuperClass(String name) {     
+
+        this.name = name;   
+
+    }   
+
+    public String toString() {     
+
+        return name;   
+
+    }
+
+}  

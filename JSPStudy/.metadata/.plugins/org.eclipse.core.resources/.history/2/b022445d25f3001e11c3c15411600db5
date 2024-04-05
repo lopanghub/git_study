@@ -1,0 +1,70 @@
+package com.jspstudy.ch04.servletexam;
+
+public class StudentInfo {
+	private String name;
+	private String gender;
+	private String tel;
+	private String SI;
+	private String SM;
+	private String Solution;
+	private String subject;
+	
+	public StudentInfo() {}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getTel() {
+		return tel;
+	}
+
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+
+	public String getSI() {
+		return SI;
+	}
+
+	public void setSI(String sI) {
+		SI = sI;
+	}
+
+	public String getSM() {
+		return SM;
+	}
+
+	public void setSM(String sM) {
+		SM = sM;
+	}
+
+	public String getSolution() {
+		return Solution;
+	}
+
+	public void setSolution(String solution) {
+		Solution = solution;
+	}
+
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	
+}

@@ -1,0 +1,5 @@
+package com.jsppractice.ch04.requestmethod;
+
+public class PostRequestServlet {
+
+}

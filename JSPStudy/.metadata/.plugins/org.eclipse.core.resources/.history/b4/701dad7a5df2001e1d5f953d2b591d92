@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+*{margin:0; padding:0; text-align:center;}
+
+container{
+	box-shadow : 5px 5px gray;
+	position: relative;
+}
+
+.lotto_line{
+	position :absolute;
+	width:800px;
+	border: 1px solid gray;
+	border-radius: 2px;
+	margin:5px;
+}
+
+.lotto_line>.lotto_times{
+	font-weight:bold;
+	font-size:1.5em;
+	color:blue;
+}
+.lotto_line>img{
+	padding : 5px;
+}
+.lotto_line>.bonus_num{
+	color:gray;
+}
+a{
+	font-size:0.5em;
+}

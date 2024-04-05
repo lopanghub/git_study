@@ -2,6 +2,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <%
 	ArrayList <LottoNum> lottoList = new ArrayList<LottoNum>();
 	LottoNum lotto = new LottoNum("907회",21,27,29,38,40,44,37);

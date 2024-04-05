@@ -9,7 +9,7 @@
 <body>
 	<h2>회원 기본 정보 입력</h2>	
 	<!-- form 태그의 method 속성을 지정하지 않으면 GET 방식 요청이 된다. -->
-	<form name="fMember1">	
+	<form name="fMember1" action="formData01">	
 		<p>이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;름 : 
 			<input type="text" name="name" /></p>
 		<p>아&nbsp;&nbsp;이&nbsp;&nbsp;디 : 

@@ -1,0 +1,39 @@
+package com.jspstudy.ch04.formdata;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/formData01")
+public class FormData01 extends HttpServlet{
+	public void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException{
+		
+		String name, id, pass, gender, nMail, aMail, iMail, job;
+		//요청 데이터 받기
+		name = request.getParameter("name");
+		id = request.getParameter("id");
+		pass = request.getParameter("pass");
+		gender = request.getParameter("gender");
+		nMail = request.getParameter("nMail");
+		aMail = request.getParameter("aMail");
+		iMail = request.getParameter("iMail");
+		job = request.getParameter("job");
+		
+		//응답 데이터 작성
+		response.setContentType("text/html; charset=utf-8");
+		PrintWriter out = response.getWriter();
+		
+		out.println("<h2>사용자가 입력한 값</h2>");
+		out.println("이름 : "+name);
+		out.println("성별 : "+gender);
+		
+		out.close();
+	}
+}

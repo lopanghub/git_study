@@ -4,12 +4,13 @@
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
     
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="lotto.css">
 <title>EL과 JSTL을 이용해 로또 당첨 번호 리스트 출력</title>
 </head>
 <body>	
@@ -25,15 +26,17 @@
 				<img src =./images/lotto_img/ball_${lottoNum.num4 }.png>
 				<img src =./images/lotto_img/ball_${lottoNum.num5 }.png>
 				<img src =./images/lotto_img/ball_${lottoNum.num6 }.png>
-				<span class=bonus_num>보너스 번호</span>
+				<span class=bonus_num>+ 보너스 번호</span>
 				<img src =./images/lotto_img/ball_${lottoNum.bonusNum }.png>
 				
 			</div>
 		</c:forEach>
+		<section>
 		<a href =#>도서리스트#1</a>
 		<a href =#>도서리스트#2</a>
 		<a href =#>로또 당첨 번호 리스트#1</a>
 		<a href =#>로또 당첨 번호 리스트#2</a>
+		</section>
 	</container>
 </body>
 </html>

@@ -1,0 +1,5 @@
+package com.jsppractice.ch04.formdata;
+
+public class UserInfo {
+
+}
