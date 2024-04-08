@@ -10,10 +10,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 	// 오라클 사용자 정보와 접속 드라이버 이름 및 접속 URL 등을 변수에 저장
-	String user = "tiger";
-	String pass = "scott";
+	String user = "hr";
+	String pass = "hr";
 	String driver = "oracle.jdbc.driver.OracleDriver";
-	String url ="jdbc:oracle:thin:@localhost:1521:orcl		";
+	String url ="jdbc:oracle:thin:@localhost:1521:xe";
 	
 	/* 1. 접속하려는 DBMS의 드라이버를 로딩 한다.
 	 * Oracle 드라이버를 다운로드 하여 WEB-INF/lib 폴더에 추가해야 한다.

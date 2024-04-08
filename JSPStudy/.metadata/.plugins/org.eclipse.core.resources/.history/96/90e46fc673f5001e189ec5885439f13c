@@ -1,0 +1,43 @@
+package com.jspstudy.ch06.controller;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.jsppractice.ch06.vo.Board;
+
+
+
+@WebServlet("/boardList01")
+public class BoardListController01 extends HttpServlet{
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse resp) 
+			throws ServletException, IOException {
+		String user = "scott";
+		String pass = "1234";
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		ArrayList<Board> bList =null;
+		
+		Class.forName(driver);
+		conn = DriverManager.getConnection(url, user, pass);
+		pstmt = conn.prepareStatement("select * from jspbbs order by no desc");
+		rs = pstmt.executeQuery();
+	}
+	
+}

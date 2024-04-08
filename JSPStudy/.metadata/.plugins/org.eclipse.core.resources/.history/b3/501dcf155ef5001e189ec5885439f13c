@@ -1,0 +1,41 @@
+<%@page import="com.jsppractice.ch06.vo.Board"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+	String user = "scott";
+	String pass = "1234";
+	String driver = "oracle.jdbc.driver.OracleDriver";
+	String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+	
+	Connection conn=null;
+	PreparedStatement pstmt=null;
+	ResultSet rs = null;
+	
+	Class.forName(driver);
+	conn = DriverManager.getConnection(url, user, pass);
+	pstmt = conn.prepareStatement("select * from jspbbs order by no desc");
+	rs =  pstmt.executeQuery();
+	
+	ArrayList <Board> bList = new ArrayList<>();
+	
+	while(rs.next()){
+		Board b = new Board();
+		b.setNo(rs.getInt(1));
+		b.setTitle(rs.getString("title"));
+		b.setWriter(rs.getString(3));
+		b.setRegDate(rs.getTimestamp("reg_date"));
+		b.setReadCount(rs.getInt("read_count"));
+		
+		bList.add(b);
+	}
+	
+	if(rs!=null)rs.close();
+	if(pstmt!=null)pstmt.close();
+	if(conn!=null)conn.close();
+%>

@@ -15,7 +15,7 @@ public class OracleConnection {
 		
 		String user ="scott", pws="tiger";
 		String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-		Connection conn = null;
+		Connection conn = nul
 		try {
 			conn = DriverManager.getConnection(url, user, pws);
 		} catch (SQLException e) {
