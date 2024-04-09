@@ -1,0 +1,39 @@
+package com.jspstudy.ch05.exam;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/postRequest")
+public class JSPStudyCh0501Exam extends HttpServlet{
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		
+		String id, color, food, animal, hobby;
+		
+		id = request.getParameter("name");
+		color = request.getParameter("color");
+		food = request.getParameter("food");
+		animal = request.getParameter("animal");
+		hobby = request.getParameter("hobby");
+		
+		request.setAttribute("id", id);
+		request.setAttribute("color", color);
+		request.setAttribute("food", food);
+		request.setAttribute("animal", animal);
+		request.setAttribute("hobby", hobby);
+		
+		RequestDispatcher rd = 
+				request.getRequestDispatcher("ch0501ExamResult.jsp");
+		rd.forward(request, response);
+
+	}
+	
+}

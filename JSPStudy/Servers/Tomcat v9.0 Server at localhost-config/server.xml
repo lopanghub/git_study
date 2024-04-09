@@ -160,7 +160,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="JSPClassCh06" path="/JSPClassCh06" reloadable="true" source="org.eclipse.jst.jee.server:JSPClassCh06"/><Context docBase="JSPStudyBBS01" path="/JSPStudyBBS01" reloadable="true" source="org.eclipse.jst.jee.server:JSPStudyBBS01"/><Context docBase="JSPPracticech06" path="/JSPPracticech06" reloadable="true" source="org.eclipse.jst.jee.server:JSPPracticech06"/></Host>
+      <Context docBase="JSPClassCh06" path="/JSPClassCh06" reloadable="true" source="org.eclipse.jst.jee.server:JSPClassCh06"/><Context docBase="JSPStudyBBS01" path="/JSPStudyBBS01" reloadable="true" source="org.eclipse.jst.jee.server:JSPStudyBBS01"/><Context docBase="JSPPracticech06" path="/JSPPracticech06" reloadable="true" source="org.eclipse.jst.jee.server:JSPPracticech06"/><Context docBase="JSPListPrintClass" path="/JSPListPrintClass" reloadable="true" source="org.eclipse.jst.jee.server:JSPListPrintClass"/><Context docBase="JSPStudyCh05Exam" path="/JSPStudyCh05Exam" reloadable="true" source="org.eclipse.jst.jee.server:JSPStudyCh05Exam"/><Context docBase="JSPPracticeCh05" path="/JSPPracticeCh05" reloadable="true" source="org.eclipse.jst.jee.server:JSPPracticeCh05"/><Context docBase="JSPClassCh05" path="/JSPClassCh05" reloadable="true" source="org.eclipse.jst.jee.server:JSPClassCh05"/></Host>
     </Engine>
   </Service>
 </Server>

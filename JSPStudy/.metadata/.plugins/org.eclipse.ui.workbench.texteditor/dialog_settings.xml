@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="driver"/>
+		<item key="selection" value="form-control"/>
 		<list key="findhistory">
+			<item value="form-control"/>
+			<item value="form"/>
 			<item value="driver"/>
 			<item value="job"/>
 			<item value="service("/>
@@ -17,10 +19,10 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="96"/>
-		<item key="DIALOG_Y_ORIGIN" value="218"/>
+		<item key="DIALOG_X_ORIGIN" value="623"/>
+		<item key="DIALOG_Y_ORIGIN" value="180"/>
 		<item key="DIALOG_WIDTH" value="320"/>
-		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_HEIGHT" value="385"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 </section>

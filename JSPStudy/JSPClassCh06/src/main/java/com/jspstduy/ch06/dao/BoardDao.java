@@ -16,10 +16,7 @@ import javax.sql.DataSource;
 import com.jspstudy.ch06.vo.Board;
 
 public class BoardDao {
-	private static final String USER = "scott";
-	private static final String PASS = "1234";
-	private static final String DRIVER = "oracle.jdbc.driver.OracleDriver";
-	private static final String URL = "jdbc:oracle:thin:@localhost:1521:orcl";
+	
 
 	// JDBC DB 프로그램에 필요한 객체
 	private Connection conn = null;

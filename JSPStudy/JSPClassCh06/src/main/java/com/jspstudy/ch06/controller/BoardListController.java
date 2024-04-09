@@ -32,7 +32,7 @@ public class BoardListController extends HttpServlet{
 		
 		request.setAttribute("bList", bList);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/board/boardList01.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/board/boardList.jsp");
 		rd.forward(request, response);
 	}
 	

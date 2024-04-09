@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;JSPPracticeCh05/src/main/webapp/response/sendRedirectLoginOk.jsp&apos; to &apos;sendRedirectLoginOK.jsp&apos;" description="Rename resource &apos;sendRedirectLoginOk.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/response/sendRedirectLoginOk.jsp" name="sendRedirectLoginOK.jsp" stamp="1712651197784" updateReferences="true"/>
+</session>
