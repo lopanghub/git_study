@@ -1,0 +1,23 @@
+$(function(){
+	
+	$("#writeFrom").on("submit", function(e){
+		if($("#writer").val().trim().length<=0){
+			alert("글쓴이를 입력");
+			$("#writer").val("").focus();
+			return false;	
+		}
+		if($("#title").val().length<=0){
+			alert("제목을 입력");
+			return false;	
+		}
+		if($("#pass").val().length<=0){
+			alert("비밀번호를 입력");
+			return false;	
+		}
+		if($("#content").val().length<=0){
+			alert("내용을 입력");
+			return false;	
+		}
+	});
+	
+});

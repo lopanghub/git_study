@@ -188,7 +188,7 @@ public class BoardDao {
 			 **/
 			pstmt = conn.prepareStatement(sqlBoard);
 			
-			/* 6. PreparedStatement 객체에 SELECT 쿼리의 Placeholder(?)와
+			/* 6 . PreparedStatement 객체에 SELECT 쿼리의 Placeholder(?)와
 			 * 데이터를 맵핑 한다.
 			 **/
 			pstmt.setInt(1,  no);

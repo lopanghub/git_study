@@ -19,35 +19,8 @@
 </head>
 <body>
 	<div class="container">
-		<!-- 헤더 -->
-		<div class="row border-bottom border-primary">
-			<!-- 임시 이미지 -->
-			<div class="col-4 ">
-				<img src="https://via.placeholder.com/200X100">
-			</div>
-			<!-- 네브바 -->
-			<div class="col-8">				
-				<div class="row">
-					<div class="col">
-						<ul class="nav justify-content-end">
-							<li class="nav-item"><a class="nav-link active"
-								aria-current="page" href="#">로그인</a></li>
-							<li class="nav-item"><a class="nav-link" href="boardList">게시글
-									리스트</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">회원 가입</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">주문/배송조회</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">고객센터</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col text-end">로그인시 인사말 출력</div>
-				</div>
-
-			</div>
-		</div>
-		<!-- 헤더끝 -->
-		
+		<!-- header -->
+		<%@ include file="../pages/header.jsp" %>
 		<!-- 메인 시작 -->
 		<!-- 타이틀 -->
 		<div class="row my-5">						
@@ -100,7 +73,7 @@
 							<c:forEach var="board" items="${bList }">
 								<tr>
 									<td>${board.no }</td>
-									<td>${board.title }</td>
+									<td><a href="boardDetail?no=${board.no }">${board.title }</td>
 									<td>${board.writer }</td>
 									<td>${board.regDate }</td>
 									<td>${board.readCount }</td>
@@ -118,17 +91,8 @@
 				</table>
 			</div>
 		</div>
-		
-		<!-- 푸터 -->
-		<div class="row my-5 border-top border-primary" id="global-footer">
-			<div class="col text-center py-3">
-				<p>
-					고객상담 전화주문 : 1234-5678 사업자 등록 번호 : 111-11-123456 대표이사 : 홍길동 통신판매업 서울
-					제0000000호<br> 개인정보관리책임자 : 임꺽정 분쟁조정기관표시 : 소비자보호원, 전자거래분쟁중재위원회<br>
-					Copyright (c) 2023 JSP2U Corp. All right Reserved.
-			</div>
-		</div>
-		<!-- 푸터끝 -->
+		<!-- footer -->
+		<%@ include file="../pages/footer.jsp" %>
 	</div>
 	<script src="bootstrap/bootstrap.bundle.min.js">		
 	</script>

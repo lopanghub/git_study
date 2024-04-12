@@ -1,0 +1,38 @@
+package com.jspstudy.ch06.controller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.jspstduy.ch06.dao.BoardDao;
+
+@WebServlet("/updateForm")
+public class BoardUpdateFormController extends HttpServlet{
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		
+		request.setCharacterEncoding("utf-8");
+		
+		//입력값 받기
+		String sNo = request.getParameter("no");
+		String pass = request.getParameter("pass");
+		
+		//비밀번호 맞는지 체크
+		BoardDao dao = new BoardDao();
+		int no = Integer.parseInt(sNo);
+		boolean isPassCheck = dao.isPassCheck(pass, no);
+		
+		RequestDispatcher rd=request.getRequestDispatcher("/WEB-INF/board/writeForm.jsp");
+		
+		rd.forward(request, response);
+		
+	}
+	
+}

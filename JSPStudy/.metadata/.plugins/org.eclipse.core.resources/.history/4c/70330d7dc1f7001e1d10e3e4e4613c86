@@ -1,0 +1,5 @@
+const writeForm = document.getElementById("wiriteForm");
+
+writeForm.addEventListener("submit",()=>{
+	alert("writeForm submit");
+});

@@ -8,7 +8,7 @@
     <title>게시 글쓰기</title>
     <link href="bootstrap/bootstrap.min.css" rel="stylesheet" >
     <script src="js/jquery-3.3.1.min.js"></script>
-	<script src="js/formcheck.js"></script> 
+	<script src="js/formCheck02.js"></script> 
   </head>
   <body>
   	<div class="container">
