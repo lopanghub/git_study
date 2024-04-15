@@ -1,0 +1,69 @@
+package com.jspstudy.ch06.controller;
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.jspstduy.ch06.dao.BoardDao;
+import com.jspstudy.ch06.vo.Board;
+
+
+
+@WebServlet("/writeProcess")
+public class BoardWriteController extends HttpServlet{
+	
+	private static String uploadDir;
+	private static File parentFile;
+	
+	//서블릿 초기화 메서드
+	@Override
+	public void init() {
+		// uploadDir = /upload
+		uploadDir = getServletContext().getInitParameter("uploadDir");
+		String realPath= getServletContext().getRealPath(uploadDir);
+		parentFile =new File(realPath);
+		
+		if(!(parentFile.exists()&&parentFile.isDirectory())) {
+			parentFile.mkdir();
+		}
+		System.out.println("init()-"+parentFile);
+	}
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		//cos 라이브러리 객체 생성자에 제공할 데이터
+		String realPath = request.getServletContext().getRealPath(uploadDir);
+		
+		
+		
+		//request.setCharacterEncoding("utf-8");
+			
+		
+		//입력 처리
+		String title =request.getParameter("title");
+		String writer =request.getParameter("writer");
+		String pass =request.getParameter("pass");
+		String content=request.getParameter("content");
+		Board b = new Board();
+		b.setTitle(title);
+		b.setWriter(writer);
+		b.setContent(content);
+		b.setPass(pass);
+		
+		
+		//dao를 이용해서 게시글 정보를 db에 저장
+		BoardDao dao = new BoardDao();
+		dao.insertBoard(b);
+		
+		//게시글 리스트로 Redirect 시킨다 
+		//자원이 이동되었다고 응답하면서 그쪽으로 이동하라고 주소를 알려주는 것
+		response.sendRedirect("boardList");
+	}
+	
+}

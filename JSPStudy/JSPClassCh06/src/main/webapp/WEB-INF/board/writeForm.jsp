@@ -34,7 +34,8 @@
 			</div>
 		</div>
 		<form name="writeForm" id="writeForm" action="writeProcess"
-			method="post" class="row border-primary g-3 my-3">
+			method="post" class="row border-primary g-3 my-3" 
+			enctype="multipart/form-data">
 			<div class="col-4 offset-2">
 				<label for="writer" class="form-label">글쓴이</label> <input
 					type="text" class="form-control" id="writer" name="writer"
@@ -51,6 +52,10 @@
 			<div class="col-8 offset-2">
 				<label for="content" class="form-label">내 용 </label> 
 				<textarea class="form-control" id="content" name="content"></textarea>
+			</div>
+			<div class="col-8 offset-2">
+				<label for="content" class="form-label">파 일 </label> 
+				<input type="file" class ="form-control" name="file1" id="file1"></textarea>
 			</div>
 			<div class="col-8 offset-2">
 				<input type="submit" value="등록하기" class="btn btn-primary"/>
