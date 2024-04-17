@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 정보 추가 입력</title>
+</head>
+<body>
+	<h2>회원 정보 추가 입력</h2>
+	<form action="sessionAttributeProcess.jsp" method="post">
+		<p>성  별 : 
+			<input type ="radio" name="gender" value="male"/>남
+			<input type ="radio" name="gender" value="female"/>여</p>
+		<p>나  이 : 
+			<input type="text" name="age" size="3"/></p> 	
+		<p>관심분야 : 
+			<select name="interest">
+				<option value="Android">안드로이드</option>
+				<option value="JavaScript">자바스크립트</option>
+				<option value="Spring" selected>스프링</option>
+				<option value="jQuery">제이쿼리</option>
+				<option value="Oracle">오라클</option>
+			</select></p>
+		<p>메일수신 : <br>
+	</form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 정보 추가 입력</title>
+</head>
+<body>
+	<h2>회원 정보 추가 입력</h2>
+	<form action="sessionAttributeProcess.jsp" method="post">
+		<p>성  별:
+			<input type ="radio" name="gender" value="male"/>남
+			<input type ="radio" name="gender" value="female"/>여</p>
+	</form>
+</body>
+</html>

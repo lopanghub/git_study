@@ -1,0 +1,16 @@
+package com.jspstudy.ch06.dao;
+
+public class Test {
+	public static void main(String[] args) {
+		String a = "AAA";
+		String b = a;
+		String c = new String "AAA";
+		
+		System.out.println(a.equals(b));
+		System.out.println(a.equals(c));
+		System.out.println(a==b);
+		System.out.println(a==c);
+		
+		
+	}
+}	
