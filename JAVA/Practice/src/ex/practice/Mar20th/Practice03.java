@@ -8,7 +8,7 @@ public class Practice03 {
 //		f.delete();
 		try {
 			f.createNewFile();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

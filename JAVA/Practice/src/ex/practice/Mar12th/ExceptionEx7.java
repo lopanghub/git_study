@@ -4,9 +4,9 @@ public class ExceptionEx7 {
 
 	public static void main(String[] args) {
 		try {
-		throw new Exception();
+			throw new Exception();
 		} catch (Exception e) {
-			System.out.println("Exception ¹ß»ý");
+			System.out.println("Exception ï¿½ß»ï¿½");
 		}
 
 	}

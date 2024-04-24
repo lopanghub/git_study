@@ -7,7 +7,7 @@ public class Practice4 {
 		boolean b = true;
 		System.out.println(a);
 		System.out.println(b);
-				
+
 	}
 
 }

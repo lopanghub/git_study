@@ -11,7 +11,6 @@ public class Practice08 {
 		System.out.println("hello \"world\"");
 		System.out.println("hello \rworld");
 		// 구버전에선 앞으로 보내고 덮어쓰기 기능
-		
 
 	}
 

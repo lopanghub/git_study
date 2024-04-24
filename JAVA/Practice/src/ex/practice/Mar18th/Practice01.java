@@ -20,14 +20,14 @@ public class Practice01 {
 		long end = System.currentTimeMillis();
 		return end - start;
 	}
-	
+
 	public static long add2(List<String> list) {
 		long start = System.currentTimeMillis();
-		for(int i = 0 ;i<1000000;i++) {
-			list.add(10500+"X");
+		for (int i = 0; i < 1000000; i++) {
+			list.add(10500 + "X");
 		}
-		
+
 		long end = System.currentTimeMillis();
-		return end-start;
+		return end - start;
 	}
 }

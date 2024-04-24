@@ -5,24 +5,24 @@ public class Practice02 {
 		stringSpeed();
 		bufferSpeed();
 	}
-	
+
 	public static void stringSpeed() {
 		long start = System.currentTimeMillis();
 		String data = "";
-		for(int i = 1 ; i <100000;i++) {
-			data +=i;
+		for (int i = 1; i < 100000; i++) {
+			data += i;
 		}
 		long end = System.currentTimeMillis();
-		System.out.println("실행 시간 : "+(end-start));
+		System.out.println("실행 시간 : " + (end - start));
 	}
-	
+
 	public static void bufferSpeed() {
 		long start = System.currentTimeMillis();
 		StringBuffer data = new StringBuffer("1");
-		for(int i = 1 ; i <100000;i++) {
+		for (int i = 1; i < 100000; i++) {
 			data.append(i);
 		}
 		long end = System.currentTimeMillis();
-		System.out.println("실행 시간 : "+(end-start));
+		System.out.println("실행 시간 : " + (end - start));
 	}
 }

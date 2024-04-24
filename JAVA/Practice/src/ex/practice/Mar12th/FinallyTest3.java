@@ -4,17 +4,17 @@ public class FinallyTest3 {
 
 	public static void main(String[] args) {
 		method1();
-		System.out.println("method1()ÀÇ ¼öÇàÀ» ¸¶Ä¡°í main¸Þ¼­µå·Î º¹±Í");
+		System.out.println("method1()ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ mainï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 	}
-	
+
 	static void method1() {
 		try {
-			System.out.println("method1()ÀÌ È£Ãâ");
+			System.out.println("method1()ï¿½ï¿½ È£ï¿½ï¿½");
 			return;
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			System.out.println("method1()ÀÇ fianlly ºí·°ÀÌ ½ÇÇà");
+			System.out.println("method1()ï¿½ï¿½ fianlly ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 		}
 	}
 }

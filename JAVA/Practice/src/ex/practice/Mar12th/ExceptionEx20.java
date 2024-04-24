@@ -6,13 +6,13 @@ public class ExceptionEx20 {
 		try {
 			method1();
 		} catch (Exception e) {
-			System.out.println("main¿¡¼­ ¿¹¿Ü Ã³¸®µÊ");
+			System.out.println("mainï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½");
 			e.printStackTrace();
 		}
 
 	}
-	
-	static void method1() throws Exception{
+
+	static void method1() throws Exception {
 		throw new Exception();
 	}
 }

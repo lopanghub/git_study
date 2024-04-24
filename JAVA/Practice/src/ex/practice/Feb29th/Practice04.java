@@ -6,7 +6,7 @@ public class Practice04 {
 		int a = 0;
 		do {
 			System.out.println("great");
-		}while(a>0);
+		} while (a > 0);
 
 	}
 

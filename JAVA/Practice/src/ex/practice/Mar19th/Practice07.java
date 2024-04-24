@@ -8,12 +8,12 @@ public class Practice07 {
 		try {
 			InputStream is = new FileInputStream("test.txt");
 			int r;
-			while(true) {
-				r=is.read();
-				if(r==-1){ //-1인 이유는 다읽으면 -1로 반환됨
+			while (true) {
+				r = is.read();
+				if (r == -1) { // -1인 이유는 다읽으면 -1로 반환됨
 					break;
 				}
-				System.out.print((char)r);
+				System.out.print((char) r);
 			}
 			is.close();
 		} catch (Exception e) {

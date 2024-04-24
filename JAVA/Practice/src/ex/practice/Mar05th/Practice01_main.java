@@ -7,7 +7,7 @@ public class Practice01_main {
 		Practice01 p1 = new Practice01(10, 4.5);
 		System.out.println(p1);
 		System.out.println(p1.a);
-	
+
 		System.out.println(p1.str);
 		System.out.println(p1.t1);
 	}

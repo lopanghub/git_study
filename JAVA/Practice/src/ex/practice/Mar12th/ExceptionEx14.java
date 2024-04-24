@@ -1,6 +1,8 @@
 package ex.practice.Mar12th;
+
 import java.io.*;
 import java.util.Date;
+
 public class ExceptionEx14 {
 
 	public static void main(String[] args) {
@@ -11,19 +13,19 @@ public class ExceptionEx14 {
 			fos = new FileOutputStream("error.log", true);
 			ps = new PrintStream(fos);
 			System.setErr(ps);
-			
+
 			System.out.println(1);
 			System.out.println(2);
 			System.out.println(3);
-			System.out.println(0/0);
+			System.out.println(0 / 0);
 			System.out.println(4);
 		} catch (Exception ae) {
 			System.err.println("-----------------------------------");
-			System.err.println("¿¹¿Ü¹ß»ý½Ã°£ : " + new Date());  // ÇöÀç½Ã°£Ãâ·Â
+			System.err.println("ï¿½ï¿½ï¿½Ü¹ß»ï¿½ï¿½Ã°ï¿½ : " + new Date()); // ï¿½ï¿½ï¿½ï¿½Ã°ï¿½ï¿½ï¿½ï¿½
 			ae.printStackTrace(System.err);
-			System.err.println("¿¹¿Ü¸Þ½ÃÁö : " + ae.getMessage());
+			System.err.println("ï¿½ï¿½ï¿½Ü¸Þ½ï¿½ï¿½ï¿½ : " + ae.getMessage());
 			System.err.println("-----------------------------------");
-		}	// try-catchÀÇ ³¡
+		} // try-catchï¿½ï¿½ ï¿½ï¿½
 	}
 
 }

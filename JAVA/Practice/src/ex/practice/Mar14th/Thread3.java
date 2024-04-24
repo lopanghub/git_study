@@ -7,15 +7,15 @@ public class Thread3 {
 	}
 }
 
-class Thread3_1 extends Thread{
+class Thread3_1 extends Thread {
 	public void run() {
 		throwException();
 	}
-	
+
 	public void throwException() {
 		try {
 			throw new Exception();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

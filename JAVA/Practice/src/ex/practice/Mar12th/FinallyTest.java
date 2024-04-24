@@ -6,11 +6,10 @@ public class FinallyTest {
 		try {
 			startInstall();
 			copyFiles();
-			
-			
-		} catch(Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
-			
+
 		} finally {
 			deleteTempFiles();
 		}
@@ -18,12 +17,14 @@ public class FinallyTest {
 	}
 
 	static void startInstall() {
-		
+
 	}
+
 	static void copyFiles() {
-		
+
 	}
+
 	static void deleteTempFiles() {
-		
+
 	}
 }

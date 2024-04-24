@@ -25,7 +25,7 @@ public class Pracice01 {
 			result = "D";
 		}
 
-		System.out.println(result+"학점");
+		System.out.println(result + "학점");
 	}
 
 }

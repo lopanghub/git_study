@@ -21,11 +21,7 @@ public class Student2 {
 		total = koreanScore + mathScore + englishScore;
 	}
 
-	
-
-
-
-	//	public String toString() {
+	// public String toString() {
 ////		return format(name, 4, LEFT)
 ////				+
 //	}
@@ -40,21 +36,21 @@ public class Student2 {
 		char[] result = new char[length]; // length 크기의 배열 생성
 
 		// result 배열을 공백으로 채우기
-		for (int i =0;i<result.length;i++) {
+		for (int i = 0; i < result.length; i++) {
 			result[i] = ' ';
 		}
 
 		switch (alignment) { // 좌 우 중앙에 따라 다르게 배열 복제
-			case CENTER :
+		case CENTER:
 			System.arraycopy(source, 0, result, diff / 2, source.length);
 			// arrraycopy(src : 원본배열,srcPos:복사 시작 위치, dest:대상 배열,
 			// destPos:붙여넣기 시작위치,length:복사할 요소의 크기
 			break;
-			case RIGHT :
+		case RIGHT:
 			System.arraycopy(source, 0, result, diff, source.length);
 			break;
-			case LEFT :
-			
+		case LEFT:
+
 			System.arraycopy(source, 0, result, 0, source.length);
 		}
 		return new String(result);

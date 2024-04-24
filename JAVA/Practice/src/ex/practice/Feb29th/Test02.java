@@ -13,7 +13,7 @@ public class Test02 {
 //			sum +=i;
 //		}
 //		System.out.print(sum);
-		
+
 		// 5번
 //		int sum =0;
 //		for(int i=0;i<10;i++) {
@@ -22,8 +22,8 @@ public class Test02 {
 //			}
 //		}
 //		System.out.print(sum);
-		
-		//6번
+
+		// 6번
 //		int i=0;
 //		while(i<10) {
 //			int j=0;
@@ -34,8 +34,8 @@ public class Test02 {
 //			System.out.println();
 //			i++;
 //		}
-		
-		//7번
+
+		// 7번
 //		int sum = 0;
 //		for(int i=1;i<=100;i++) {
 //			if(i%3==0) {
@@ -43,8 +43,8 @@ public class Test02 {
 //			}
 //		}
 //		System.out.println(sum);
-		
-		//8번
+
+		// 8번
 //		int i = 0, j = 0;
 //		
 //		while(i+j!=5) {
@@ -52,8 +52,8 @@ public class Test02 {
 //			j= (int) ((Math.random())*6+1);
 //			System.out.println(i+" "+ j);
 //		}	
-		
-		//9번
+
+		// 9번
 //		for(int x=1;x<=10;x++) {
 //			for(int y=1;y<=10;y++) {
 //				if((4*x)+(5*y)==60) {
@@ -61,16 +61,16 @@ public class Test02 {
 //				}
 //			}
 //		}
-		
-		//10번 
+
+		// 10번
 //		for(int i=0;i<5;i++) {
 //			for(int j=0;j<1+i;j++) {
 //				System.out.print("*");
 //			}
 //			System.out.println();
 //		}
-		
-		//11번
+
+		// 11번
 //		Scanner sc = new Scanner(System.in);
 //		
 //		data:
@@ -95,9 +95,7 @@ public class Test02 {
 //			}
 //			
 //		}
-		
-		
+
 	}
 
 }
-

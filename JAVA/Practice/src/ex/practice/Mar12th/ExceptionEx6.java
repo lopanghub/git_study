@@ -4,13 +4,13 @@ public class ExceptionEx6 {
 
 	public static void main(String[] args) {
 		try {
-			Exception e = new Exception("°íÀÇ·Î ¹ß»ý ½ÃÅ´");
+			Exception e = new Exception("ï¿½ï¿½ï¿½Ç·ï¿½ ï¿½ß»ï¿½ ï¿½ï¿½Å´");
 			throw e;
 		} catch (Exception e) {
-			System.out.println("¿¡·¯ : "+ e.getMessage());
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ : " + e.getMessage());
 			e.printStackTrace();
 		}
-		System.out.println("ÇÁ·Î±×·¥ Á¤»ó Á¤·á");
+		System.out.println("ï¿½ï¿½ï¿½Î±×·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 	}
 
 }

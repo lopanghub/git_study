@@ -5,14 +5,14 @@ public class ExceptionEx12 {
 	public static void main(String[] args) {
 		System.out.println(1);
 		System.out.println(2);
-		
+
 		try {
 			System.out.println(3);
-			System.out.println(0/0);
+			System.out.println(0 / 0);
 			System.out.println(4);
-		} catch(ArithmeticException ae) {
+		} catch (ArithmeticException ae) {
 			ae.printStackTrace();
-			System.out.println("¿¹¿Ü ¸Þ½ÃÁö : "+ae.getMessage());
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ : " + ae.getMessage());
 		}
 		System.out.println(6);
 	}

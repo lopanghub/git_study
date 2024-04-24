@@ -14,8 +14,8 @@ public class Practice07 {
 		ts.add("osca");
 		ts.add("s");
 		System.out.println(ts);
-		
+
 		System.out.println(ts.subSet("m", "s"));
-		System.out.println(ts.subSet("m",true, "s", true));
+		System.out.println(ts.subSet("m", true, "s", true));
 	}
 }

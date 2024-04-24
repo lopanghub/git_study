@@ -32,14 +32,14 @@ public class Practice04 {
 			Student s = iter.next();
 			String name = s.getName();
 			int score = s.getScore();
-			System.out.println(name+"__"+score);
+			System.out.println(name + "__" + score);
 		}
-		
+
 		Stream<Student> str = list.stream();
-		str.forEach(s ->{ //for(Student s: list)와 유사
-			String name =s.getName();
+		str.forEach(s -> { // for(Student s: list)와 유사
+			String name = s.getName();
 			int score = s.getScore();
-			System.out.println(name+"__"+score);
+			System.out.println(name + "__" + score);
 		});
 	}
 }
