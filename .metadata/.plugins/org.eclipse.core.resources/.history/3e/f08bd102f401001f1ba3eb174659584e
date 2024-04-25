@@ -1,0 +1,5 @@
+package com.jsppractice.bbs.dao;
+
+public class WasherDao {
+
+}

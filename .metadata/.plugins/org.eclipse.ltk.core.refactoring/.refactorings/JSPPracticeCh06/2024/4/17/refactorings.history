@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;JSPPracticeCh06/src/main/webapp/WEB-INF/Washer&apos; to &apos;washer&apos;" description="Rename resource &apos;Washer&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/Washer" name="washer" stamp="1713935998899" updateReferences="true"/>
+</session>

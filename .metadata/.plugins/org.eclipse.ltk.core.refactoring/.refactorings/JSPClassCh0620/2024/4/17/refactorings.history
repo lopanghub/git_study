@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;bootstrap&apos;&#x0A;- Original project: &apos;JSPClassCh0620&apos;&#x0A;- Destination element: &apos;bootstrap&apos;&#x0A;- Original elements:&#x0A;     bootstrap.bundle.min.js&#x0A;     bootstrap.min.css" description="Copy files" element1="src/main/webapp/bootstrap/bootstrap.bundle.min.js" element2="src/main/webapp/bootstrap/bootstrap.min.css" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1713777624675" target="/JSPClassCh0610/src/main/webapp/bootstrap" units="0" version="1.0"/>
+</session>

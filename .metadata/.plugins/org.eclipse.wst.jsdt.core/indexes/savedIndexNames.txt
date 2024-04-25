@@ -1,0 +1,16 @@
+INDEX VERSION 1.4+/Users/cano/Desktop/git_study/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+469221663.index
+2877837238.index
+49082462.index
+1628143846.index
+819630812.index
+1917198742.index
+3025377864.index
+1421236184.index
+2364407601.index
+1954908830.index
+1613598912.index
+904714773.index
+4266198371.index
+2107324139.index
+1303209625.index
